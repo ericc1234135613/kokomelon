@@ -1,0 +1,1679 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,542526,t=>{"use strict";t.i(24727);var e=t.i(453404),i=t.i(841066);t.i(428531);var a=t.i(88083);t.i(182384);var r=t.i(591846);t.i(372412);var o=t.i(229199);t.i(818731);var s=t.i(49976);t.i(848253);var n=t.i(844696),l=t.i(669883),c=t.i(527065);let u=c.css`
+  :host {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    color: var(--wui-color-fg-275);
+  }
+
+  input {
+    width: 100%;
+    border-radius: var(--wui-border-radius-xs);
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-002);
+    background: var(--wui-color-gray-glass-002);
+    font-size: var(--wui-font-size-paragraph);
+    letter-spacing: var(--wui-letter-spacing-paragraph);
+    color: var(--wui-color-fg-100);
+    transition:
+      background-color var(--wui-ease-inout-power-1) var(--wui-duration-md),
+      border-color var(--wui-ease-inout-power-1) var(--wui-duration-md),
+      box-shadow var(--wui-ease-inout-power-1) var(--wui-duration-md);
+    will-change: background-color, border-color, box-shadow;
+    caret-color: var(--wui-color-accent-100);
+  }
+
+  input:disabled {
+    cursor: not-allowed;
+    border: 1px solid var(--wui-color-gray-glass-010);
+  }
+
+  input:disabled::placeholder,
+  input:disabled + wui-icon {
+    color: var(--wui-color-fg-300);
+  }
+
+  input::placeholder {
+    color: var(--wui-color-fg-275);
+  }
+
+  input:focus:enabled {
+    background-color: var(--wui-color-gray-glass-005);
+    -webkit-box-shadow:
+      inset 0 0 0 1px var(--wui-color-accent-100),
+      0px 0px 0px 4px var(--wui-box-shadow-blue);
+    -moz-box-shadow:
+      inset 0 0 0 1px var(--wui-color-accent-100),
+      0px 0px 0px 4px var(--wui-box-shadow-blue);
+    box-shadow:
+      inset 0 0 0 1px var(--wui-color-accent-100),
+      0px 0px 0px 4px var(--wui-box-shadow-blue);
+  }
+
+  input:hover:enabled {
+    background-color: var(--wui-color-gray-glass-005);
+  }
+
+  wui-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .wui-size-sm {
+    padding: 9px var(--wui-spacing-m) 10px var(--wui-spacing-s);
+  }
+
+  wui-icon + .wui-size-sm {
+    padding: 9px var(--wui-spacing-m) 10px 36px;
+  }
+
+  wui-icon[data-input='sm'] {
+    left: var(--wui-spacing-s);
+  }
+
+  .wui-size-md {
+    padding: 15px var(--wui-spacing-m) var(--wui-spacing-l) var(--wui-spacing-m);
+  }
+
+  wui-icon + .wui-size-md,
+  wui-loading-spinner + .wui-size-md {
+    padding: 10.5px var(--wui-spacing-3xl) 10.5px var(--wui-spacing-3xl);
+  }
+
+  wui-icon[data-input='md'] {
+    left: var(--wui-spacing-l);
+  }
+
+  .wui-size-lg {
+    padding: var(--wui-spacing-s) var(--wui-spacing-s) var(--wui-spacing-s) var(--wui-spacing-l);
+    letter-spacing: var(--wui-letter-spacing-medium-title);
+    font-size: var(--wui-font-size-medium-title);
+    font-weight: var(--wui-font-weight-light);
+    line-height: 130%;
+    color: var(--wui-color-fg-100);
+    height: 64px;
+  }
+
+  .wui-padding-right-xs {
+    padding-right: var(--wui-spacing-xs);
+  }
+
+  .wui-padding-right-s {
+    padding-right: var(--wui-spacing-s);
+  }
+
+  .wui-padding-right-m {
+    padding-right: var(--wui-spacing-m);
+  }
+
+  .wui-padding-right-l {
+    padding-right: var(--wui-spacing-l);
+  }
+
+  .wui-padding-right-xl {
+    padding-right: var(--wui-spacing-xl);
+  }
+
+  .wui-padding-right-2xl {
+    padding-right: var(--wui-spacing-2xl);
+  }
+
+  .wui-padding-right-3xl {
+    padding-right: var(--wui-spacing-3xl);
+  }
+
+  .wui-padding-right-4xl {
+    padding-right: var(--wui-spacing-4xl);
+  }
+
+  .wui-padding-right-5xl {
+    padding-right: var(--wui-spacing-5xl);
+  }
+
+  wui-icon + .wui-size-lg,
+  wui-loading-spinner + .wui-size-lg {
+    padding-left: 50px;
+  }
+
+  wui-icon[data-input='lg'] {
+    left: var(--wui-spacing-l);
+  }
+
+  .wui-size-mdl {
+    padding: 17.25px var(--wui-spacing-m) 17.25px var(--wui-spacing-m);
+  }
+  wui-icon + .wui-size-mdl,
+  wui-loading-spinner + .wui-size-mdl {
+    padding: 17.25px var(--wui-spacing-3xl) 17.25px 40px;
+  }
+  wui-icon[data-input='mdl'] {
+    left: var(--wui-spacing-m);
+  }
+
+  input:placeholder-shown ~ ::slotted(wui-input-element),
+  input:placeholder-shown ~ ::slotted(wui-icon) {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  ::slotted(wui-input-element),
+  ::slotted(wui-icon) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  ::slotted(wui-input-element) {
+    right: var(--wui-spacing-m);
+  }
+
+  ::slotted(wui-icon) {
+    right: 0px;
+  }
+`;var d=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let p=class extends e.LitElement{constructor(){super(...arguments),this.inputElementRef=(0,s.createRef)(),this.size="md",this.disabled=!1,this.placeholder="",this.type="text",this.value=""}render(){let t=`wui-padding-right-${this.inputRightPadding}`,e={[`wui-size-${this.size}`]:!0,[t]:!!this.inputRightPadding};return i.html`${this.templateIcon()}
+      <input
+        data-testid="wui-input-text"
+        ${(0,s.ref)(this.inputElementRef)}
+        class=${(0,r.classMap)(e)}
+        type=${this.type}
+        enterkeyhint=${(0,o.ifDefined)(this.enterKeyHint)}
+        ?disabled=${this.disabled}
+        placeholder=${this.placeholder}
+        @input=${this.dispatchInputChangeEvent.bind(this)}
+        .value=${this.value||""}
+        tabindex=${(0,o.ifDefined)(this.tabIdx)}
+      />
+      <slot></slot>`}templateIcon(){return this.icon?i.html`<wui-icon
+        data-input=${this.size}
+        size=${this.size}
+        color="inherit"
+        name=${this.icon}
+      ></wui-icon>`:null}dispatchInputChangeEvent(){this.dispatchEvent(new CustomEvent("inputChange",{detail:this.inputElementRef.value?.value,bubbles:!0,composed:!0}))}};p.styles=[n.resetStyles,n.elementStyles,u],d([(0,a.property)()],p.prototype,"size",void 0),d([(0,a.property)()],p.prototype,"icon",void 0),d([(0,a.property)({type:Boolean})],p.prototype,"disabled",void 0),d([(0,a.property)()],p.prototype,"placeholder",void 0),d([(0,a.property)()],p.prototype,"type",void 0),d([(0,a.property)()],p.prototype,"keyHint",void 0),d([(0,a.property)()],p.prototype,"value",void 0),d([(0,a.property)()],p.prototype,"inputRightPadding",void 0),d([(0,a.property)()],p.prototype,"tabIdx",void 0),p=d([(0,l.customElement)("wui-input-text")],p),t.s([],542526)},794566,t=>{"use strict";t.i(677253),t.s([])},752087,t=>{"use strict";t.i(24727);var e=t.i(453404),i=t.i(841066);t.i(428531);var a=t.i(88083);t.i(372412);var r=t.i(229199);t.i(733610);var o=t.i(844696),s=t.i(669883),n=t.i(527065);let l=n.css`
+  button {
+    padding: var(--wui-spacing-4xs) var(--wui-spacing-xxs);
+    border-radius: var(--wui-border-radius-3xs);
+    background-color: transparent;
+    color: var(--wui-color-accent-100);
+  }
+
+  button:disabled {
+    background-color: transparent;
+    color: var(--wui-color-gray-glass-015);
+  }
+
+  button:hover {
+    background-color: var(--wui-color-gray-glass-005);
+  }
+`;var c=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let u=class extends e.LitElement{constructor(){super(...arguments),this.tabIdx=void 0,this.disabled=!1,this.color="inherit"}render(){return i.html`
+      <button ?disabled=${this.disabled} tabindex=${(0,r.ifDefined)(this.tabIdx)}>
+        <slot name="iconLeft"></slot>
+        <wui-text variant="small-600" color=${this.color}>
+          <slot></slot>
+        </wui-text>
+        <slot name="iconRight"></slot>
+      </button>
+    `}};u.styles=[o.resetStyles,o.elementStyles,l],c([(0,a.property)()],u.prototype,"tabIdx",void 0),c([(0,a.property)({type:Boolean})],u.prototype,"disabled",void 0),c([(0,a.property)()],u.prototype,"color",void 0),u=c([(0,s.customElement)("wui-link")],u),t.s([],752087)},513455,36153,t=>{"use strict";t.i(24727);var e=t.i(453404),i=t.i(841066);t.i(428531);var a=t.i(88083);t.i(611581),t.i(733610);var r=t.i(844696),o=t.i(669883),s=t.i(527065);let n=s.css`
+  :host {
+    width: var(--local-width);
+    position: relative;
+  }
+
+  button {
+    border: none;
+    border-radius: var(--local-border-radius);
+    width: var(--local-width);
+    white-space: nowrap;
+  }
+
+  /* -- Sizes --------------------------------------------------- */
+  button[data-size='md'] {
+    padding: 8.2px var(--wui-spacing-l) 9px var(--wui-spacing-l);
+    height: 36px;
+  }
+
+  button[data-size='md'][data-icon-left='true'][data-icon-right='false'] {
+    padding: 8.2px var(--wui-spacing-l) 9px var(--wui-spacing-s);
+  }
+
+  button[data-size='md'][data-icon-right='true'][data-icon-left='false'] {
+    padding: 8.2px var(--wui-spacing-s) 9px var(--wui-spacing-l);
+  }
+
+  button[data-size='lg'] {
+    padding: var(--wui-spacing-m) var(--wui-spacing-2l);
+    height: 48px;
+  }
+
+  /* -- Variants --------------------------------------------------------- */
+  button[data-variant='main'] {
+    background-color: var(--wui-color-accent-100);
+    color: var(--wui-color-inverse-100);
+    border: none;
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-010);
+  }
+
+  button[data-variant='inverse'] {
+    background-color: var(--wui-color-inverse-100);
+    color: var(--wui-color-inverse-000);
+    border: none;
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-010);
+  }
+
+  button[data-variant='accent'] {
+    background-color: var(--wui-color-accent-glass-010);
+    color: var(--wui-color-accent-100);
+    border: none;
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-005);
+  }
+
+  button[data-variant='accent-error'] {
+    background: var(--wui-color-error-glass-015);
+    color: var(--wui-color-error-100);
+    border: none;
+    box-shadow: inset 0 0 0 1px var(--wui-color-error-glass-010);
+  }
+
+  button[data-variant='accent-success'] {
+    background: var(--wui-color-success-glass-015);
+    color: var(--wui-color-success-100);
+    border: none;
+    box-shadow: inset 0 0 0 1px var(--wui-color-success-glass-010);
+  }
+
+  button[data-variant='neutral'] {
+    background: transparent;
+    color: var(--wui-color-fg-100);
+    border: none;
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-005);
+  }
+
+  /* -- Focus states --------------------------------------------------- */
+  button[data-variant='main']:focus-visible:enabled {
+    background-color: var(--wui-color-accent-090);
+    box-shadow:
+      inset 0 0 0 1px var(--wui-color-accent-100),
+      0 0 0 4px var(--wui-color-accent-glass-020);
+  }
+  button[data-variant='inverse']:focus-visible:enabled {
+    background-color: var(--wui-color-inverse-100);
+    box-shadow:
+      inset 0 0 0 1px var(--wui-color-gray-glass-010),
+      0 0 0 4px var(--wui-color-accent-glass-020);
+  }
+  button[data-variant='accent']:focus-visible:enabled {
+    background-color: var(--wui-color-accent-glass-010);
+    box-shadow:
+      inset 0 0 0 1px var(--wui-color-accent-100),
+      0 0 0 4px var(--wui-color-accent-glass-020);
+  }
+  button[data-variant='accent-error']:focus-visible:enabled {
+    background: var(--wui-color-error-glass-015);
+    box-shadow:
+      inset 0 0 0 1px var(--wui-color-error-100),
+      0 0 0 4px var(--wui-color-error-glass-020);
+  }
+  button[data-variant='accent-success']:focus-visible:enabled {
+    background: var(--wui-color-success-glass-015);
+    box-shadow:
+      inset 0 0 0 1px var(--wui-color-success-100),
+      0 0 0 4px var(--wui-color-success-glass-020);
+  }
+  button[data-variant='neutral']:focus-visible:enabled {
+    background: var(--wui-color-gray-glass-005);
+    box-shadow:
+      inset 0 0 0 1px var(--wui-color-gray-glass-010),
+      0 0 0 4px var(--wui-color-gray-glass-002);
+  }
+
+  /* -- Hover & Active states ----------------------------------------------------------- */
+  @media (hover: hover) and (pointer: fine) {
+    button[data-variant='main']:hover:enabled {
+      background-color: var(--wui-color-accent-090);
+    }
+
+    button[data-variant='main']:active:enabled {
+      background-color: var(--wui-color-accent-080);
+    }
+
+    button[data-variant='accent']:hover:enabled {
+      background-color: var(--wui-color-accent-glass-015);
+    }
+
+    button[data-variant='accent']:active:enabled {
+      background-color: var(--wui-color-accent-glass-020);
+    }
+
+    button[data-variant='accent-error']:hover:enabled {
+      background: var(--wui-color-error-glass-020);
+      color: var(--wui-color-error-100);
+    }
+
+    button[data-variant='accent-error']:active:enabled {
+      background: var(--wui-color-error-glass-030);
+      color: var(--wui-color-error-100);
+    }
+
+    button[data-variant='accent-success']:hover:enabled {
+      background: var(--wui-color-success-glass-020);
+      color: var(--wui-color-success-100);
+    }
+
+    button[data-variant='accent-success']:active:enabled {
+      background: var(--wui-color-success-glass-030);
+      color: var(--wui-color-success-100);
+    }
+
+    button[data-variant='neutral']:hover:enabled {
+      background: var(--wui-color-gray-glass-002);
+    }
+
+    button[data-variant='neutral']:active:enabled {
+      background: var(--wui-color-gray-glass-005);
+    }
+
+    button[data-size='lg'][data-icon-left='true'][data-icon-right='false'] {
+      padding-left: var(--wui-spacing-m);
+    }
+
+    button[data-size='lg'][data-icon-right='true'][data-icon-left='false'] {
+      padding-right: var(--wui-spacing-m);
+    }
+  }
+
+  /* -- Disabled state --------------------------------------------------- */
+  button:disabled {
+    background-color: var(--wui-color-gray-glass-002);
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-002);
+    color: var(--wui-color-gray-glass-020);
+    cursor: not-allowed;
+  }
+
+  button > wui-text {
+    transition: opacity var(--wui-ease-out-power-1) var(--wui-duration-md);
+    will-change: opacity;
+    opacity: var(--local-opacity-100);
+  }
+
+  ::slotted(*) {
+    transition: opacity var(--wui-ease-out-power-1) var(--wui-duration-md);
+    will-change: opacity;
+    opacity: var(--local-opacity-100);
+  }
+
+  wui-loading-spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: var(--local-opacity-000);
+  }
+`;var l=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let c={main:"inverse-100",inverse:"inverse-000",accent:"accent-100","accent-error":"error-100","accent-success":"success-100",neutral:"fg-100",disabled:"gray-glass-020"},u={lg:"paragraph-600",md:"small-600"},d={lg:"md",md:"md"},p=class extends e.LitElement{constructor(){super(...arguments),this.size="lg",this.disabled=!1,this.fullWidth=!1,this.loading=!1,this.variant="main",this.hasIconLeft=!1,this.hasIconRight=!1,this.borderRadius="m"}render(){this.style.cssText=`
+    --local-width: ${this.fullWidth?"100%":"auto"};
+    --local-opacity-100: ${+!this.loading};
+    --local-opacity-000: ${+!!this.loading};
+    --local-border-radius: var(--wui-border-radius-${this.borderRadius});
+    `;let t=this.textVariant??u[this.size];return i.html`
+      <button
+        data-variant=${this.variant}
+        data-icon-left=${this.hasIconLeft}
+        data-icon-right=${this.hasIconRight}
+        data-size=${this.size}
+        ?disabled=${this.disabled}
+      >
+        ${this.loadingTemplate()}
+        <slot name="iconLeft" @slotchange=${()=>this.handleSlotLeftChange()}></slot>
+        <wui-text variant=${t} color="inherit">
+          <slot></slot>
+        </wui-text>
+        <slot name="iconRight" @slotchange=${()=>this.handleSlotRightChange()}></slot>
+      </button>
+    `}handleSlotLeftChange(){this.hasIconLeft=!0}handleSlotRightChange(){this.hasIconRight=!0}loadingTemplate(){if(this.loading){let t=d[this.size],e=this.disabled?c.disabled:c[this.variant];return i.html`<wui-loading-spinner color=${e} size=${t}></wui-loading-spinner>`}return i.html``}};p.styles=[r.resetStyles,r.elementStyles,n],l([(0,a.property)()],p.prototype,"size",void 0),l([(0,a.property)({type:Boolean})],p.prototype,"disabled",void 0),l([(0,a.property)({type:Boolean})],p.prototype,"fullWidth",void 0),l([(0,a.property)({type:Boolean})],p.prototype,"loading",void 0),l([(0,a.property)()],p.prototype,"variant",void 0),l([(0,a.property)({type:Boolean})],p.prototype,"hasIconLeft",void 0),l([(0,a.property)({type:Boolean})],p.prototype,"hasIconRight",void 0),l([(0,a.property)()],p.prototype,"borderRadius",void 0),l([(0,a.property)()],p.prototype,"textVariant",void 0),p=l([(0,o.customElement)("wui-button")],p),t.s([],36153),t.s([],513455)},818731,49976,t=>{"use strict";var e=t.i(841066),i=t.i(842606),a=t.i(343865);let r=()=>new o;class o{}let s=new WeakMap,n=(0,a.directive)(class extends i.AsyncDirective{render(t){return e.nothing}update(t,[i]){let a=i!==this.G;return a&&void 0!==this.G&&this.rt(void 0),(a||this.lt!==this.ct)&&(this.G=i,this.ht=t.options?.host,this.rt(this.ct=t.element)),e.nothing}rt(t){if(this.isConnected||(t=void 0),"function"==typeof this.G){let e=this.ht??globalThis,i=s.get(e);void 0===i&&(i=new WeakMap,s.set(e,i)),void 0!==i.get(this.G)&&this.G.call(this.ht,void 0),i.set(this.G,t),void 0!==t&&this.G.call(this.ht,t)}else this.G.value=t}get lt(){return"function"==typeof this.G?s.get(this.ht??globalThis)?.get(this.G):this.G?.value}disconnected(){this.lt===this.ct&&this.rt(void 0)}reconnected(){this.rt(this.ct)}});t.s(["createRef",()=>r,"ref",()=>n],49976),t.s([],818731)},822116,t=>{"use strict";t.i(611581),t.s([])},727620,t=>{"use strict";t.i(24727);var e=t.i(453404),i=t.i(841066);t.i(428531);var a=t.i(88083);t.i(372412);var r=t.i(229199);t.i(733610);var o=t.i(844696),s=t.i(669883);t.i(542526);var n=t.i(527065);let l=n.css`
+  :host {
+    position: relative;
+    display: inline-block;
+  }
+
+  wui-text {
+    margin: var(--wui-spacing-xxs) var(--wui-spacing-m) var(--wui-spacing-0) var(--wui-spacing-m);
+  }
+`;var c=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let u=class extends e.LitElement{constructor(){super(...arguments),this.disabled=!1}render(){return i.html`
+      <wui-input-text
+        type="email"
+        placeholder="Email"
+        icon="mail"
+        size="mdl"
+        .disabled=${this.disabled}
+        .value=${this.value}
+        data-testid="wui-email-input"
+        tabIdx=${(0,r.ifDefined)(this.tabIdx)}
+      ></wui-input-text>
+      ${this.templateError()}
+    `}templateError(){return this.errorMessage?i.html`<wui-text variant="tiny-500" color="error-100">${this.errorMessage}</wui-text>`:null}};u.styles=[o.resetStyles,l],c([(0,a.property)()],u.prototype,"errorMessage",void 0),c([(0,a.property)({type:Boolean})],u.prototype,"disabled",void 0),c([(0,a.property)()],u.prototype,"value",void 0),c([(0,a.property)()],u.prototype,"tabIdx",void 0),u=c([(0,s.customElement)("wui-email-input")],u),t.s([],727620)},839361,t=>{"use strict";t.i(24727);var e=t.i(453404),i=t.i(841066);t.i(428531);var a=t.i(88083);t.i(612471);var r=t.i(844696),o=t.i(28731),s=t.i(669883),n=t.i(527065);let l=n.css`
+  :host {
+    display: block;
+    width: var(--local-width);
+    height: var(--local-height);
+    border-radius: var(--wui-border-radius-3xl);
+    box-shadow: 0 0 0 8px var(--wui-color-gray-glass-005);
+    overflow: hidden;
+    position: relative;
+  }
+
+  :host([data-variant='generated']) {
+    --mixed-local-color-1: var(--local-color-1);
+    --mixed-local-color-2: var(--local-color-2);
+    --mixed-local-color-3: var(--local-color-3);
+    --mixed-local-color-4: var(--local-color-4);
+    --mixed-local-color-5: var(--local-color-5);
+  }
+
+  @supports (background: color-mix(in srgb, white 50%, black)) {
+    :host([data-variant='generated']) {
+      --mixed-local-color-1: color-mix(
+        in srgb,
+        var(--w3m-color-mix) var(--w3m-color-mix-strength),
+        var(--local-color-1)
+      );
+      --mixed-local-color-2: color-mix(
+        in srgb,
+        var(--w3m-color-mix) var(--w3m-color-mix-strength),
+        var(--local-color-2)
+      );
+      --mixed-local-color-3: color-mix(
+        in srgb,
+        var(--w3m-color-mix) var(--w3m-color-mix-strength),
+        var(--local-color-3)
+      );
+      --mixed-local-color-4: color-mix(
+        in srgb,
+        var(--w3m-color-mix) var(--w3m-color-mix-strength),
+        var(--local-color-4)
+      );
+      --mixed-local-color-5: color-mix(
+        in srgb,
+        var(--w3m-color-mix) var(--w3m-color-mix-strength),
+        var(--local-color-5)
+      );
+    }
+  }
+
+  :host([data-variant='generated']) {
+    box-shadow: 0 0 0 8px var(--wui-color-gray-glass-005);
+    background: radial-gradient(
+      var(--local-radial-circle),
+      #fff 0.52%,
+      var(--mixed-local-color-5) 31.25%,
+      var(--mixed-local-color-3) 51.56%,
+      var(--mixed-local-color-2) 65.63%,
+      var(--mixed-local-color-1) 82.29%,
+      var(--mixed-local-color-4) 100%
+    );
+  }
+
+  :host([data-variant='default']) {
+    box-shadow: 0 0 0 8px var(--wui-color-gray-glass-005);
+    background: radial-gradient(
+      75.29% 75.29% at 64.96% 24.36%,
+      #fff 0.52%,
+      #f5ccfc 31.25%,
+      #dba4f5 51.56%,
+      #9a8ee8 65.63%,
+      #6493da 82.29%,
+      #6ebdea 100%
+    );
+  }
+`;var c=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let u=class extends e.LitElement{constructor(){super(...arguments),this.imageSrc=void 0,this.alt=void 0,this.address=void 0,this.size="xl"}render(){return this.style.cssText=`
+    --local-width: var(--wui-icon-box-size-${this.size});
+    --local-height: var(--wui-icon-box-size-${this.size});
+    `,i.html`${this.visualTemplate()}`}visualTemplate(){if(this.imageSrc)return this.dataset.variant="image",i.html`<wui-image src=${this.imageSrc} alt=${this.alt??"avatar"}></wui-image>`;if(this.address){this.dataset.variant="generated";let t=o.UiHelperUtil.generateAvatarColors(this.address);return this.style.cssText+=`
+ ${t}`,null}return this.dataset.variant="default",null}};u.styles=[r.resetStyles,l],c([(0,a.property)()],u.prototype,"imageSrc",void 0),c([(0,a.property)()],u.prototype,"alt",void 0),c([(0,a.property)()],u.prototype,"address",void 0),c([(0,a.property)()],u.prototype,"size",void 0),u=c([(0,s.customElement)("wui-avatar")],u),t.s([],839361)},800898,213254,t=>{"use strict";t.i(24727);var e=t.i(453404),i=t.i(841066);t.i(428531);var a=t.i(88083);t.i(848253),t.i(612471),t.i(733610),t.i(111231);var r=t.i(844696),o=t.i(28731),s=t.i(669883),n=t.i(527065);let l=n.css`
+  button {
+    padding: 6.5px var(--wui-spacing-l) 6.5px var(--wui-spacing-xs);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: var(--wui-border-radius-xs);
+    background-color: var(--wui-color-gray-glass-002);
+  }
+
+  button[data-clickable='false'] {
+    pointer-events: none;
+    background-color: transparent;
+  }
+
+  wui-image,
+  wui-icon {
+    width: var(--wui-spacing-3xl);
+    height: var(--wui-spacing-3xl);
+  }
+
+  wui-image {
+    border-radius: var(--wui-border-radius-3xl);
+  }
+`;var c=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let u=class extends e.LitElement{constructor(){super(...arguments),this.tokenName="",this.tokenImageUrl="",this.tokenValue=0,this.tokenAmount="0.0",this.tokenCurrency="",this.clickable=!1}render(){return i.html`
+      <button data-clickable=${String(this.clickable)}>
+        <wui-flex gap="s" alignItems="center">
+          ${this.visualTemplate()}
+          <wui-flex flexDirection="column" justifyContent="spaceBetween">
+            <wui-text variant="paragraph-500" color="fg-100">${this.tokenName}</wui-text>
+            <wui-text variant="small-400" color="fg-200">
+              ${o.UiHelperUtil.formatNumberToLocalString(this.tokenAmount,4)} ${this.tokenCurrency}
+            </wui-text>
+          </wui-flex>
+        </wui-flex>
+        <wui-text variant="paragraph-500" color="fg-100">$${this.tokenValue.toFixed(2)}</wui-text>
+      </button>
+    `}visualTemplate(){return this.tokenName&&this.tokenImageUrl?i.html`<wui-image alt=${this.tokenName} src=${this.tokenImageUrl}></wui-image>`:i.html`<wui-icon name="coinPlaceholder" color="fg-100"></wui-icon>`}};u.styles=[r.resetStyles,r.elementStyles,l],c([(0,a.property)()],u.prototype,"tokenName",void 0),c([(0,a.property)()],u.prototype,"tokenImageUrl",void 0),c([(0,a.property)({type:Number})],u.prototype,"tokenValue",void 0),c([(0,a.property)()],u.prototype,"tokenAmount",void 0),c([(0,a.property)()],u.prototype,"tokenCurrency",void 0),c([(0,a.property)({type:Boolean})],u.prototype,"clickable",void 0),u=c([(0,s.customElement)("wui-list-token")],u),t.s([],800898);var d=e;let p=n.css`
+  :host {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 1px;
+    background-color: var(--wui-color-gray-glass-005);
+    justify-content: center;
+    align-items: center;
+  }
+
+  :host > wui-text {
+    position: absolute;
+    padding: 0px 10px;
+    background-color: var(--wui-color-modal-bg);
+    transition: background-color var(--wui-duration-lg) var(--wui-ease-out-power-1);
+    will-change: background-color;
+  }
+`;var h=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let v=class extends d.LitElement{constructor(){super(...arguments),this.text=""}render(){return i.html`${this.template()}`}template(){return this.text?i.html`<wui-text variant="small-500" color="fg-200">${this.text}</wui-text>`:null}};v.styles=[r.resetStyles,p],h([(0,a.property)()],v.prototype,"text",void 0),v=h([(0,s.customElement)("wui-separator")],v),t.s([],213254)},506776,t=>{"use strict";t.i(24727);var e=t.i(453404),i=t.i(841066);t.i(428531);var a=t.i(666033),r=t.i(566582),o=t.i(819993);t.i(824984);var s=t.i(669883),n=t.i(607363),l=t.i(527065);let c=l.css`
+  :host {
+    --prev-height: 0px;
+    --new-height: 0px;
+    display: block;
+  }
+
+  div.w3m-router-container {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  div.w3m-router-container[view-direction='prev'] {
+    animation:
+      slide-left-out 150ms forwards ease,
+      slide-left-in 150ms forwards ease;
+    animation-delay: 0ms, 200ms;
+  }
+
+  div.w3m-router-container[view-direction='next'] {
+    animation:
+      slide-right-out 150ms forwards ease,
+      slide-right-in 150ms forwards ease;
+    animation-delay: 0ms, 200ms;
+  }
+
+  @keyframes slide-left-out {
+    from {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(10px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-left-in {
+    from {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-right-out {
+    from {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-right-in {
+    from {
+      transform: translateX(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+`;var u=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let d=class extends e.LitElement{constructor(){super(),this.resizeObserver=void 0,this.prevHeight="0px",this.prevHistoryLength=1,this.unsubscribe=[],this.view=r.RouterController.state.view,this.viewDirection="",this.unsubscribe.push(r.RouterController.subscribeKey("view",t=>this.onViewChange(t)))}firstUpdated(){this.resizeObserver=new ResizeObserver(([t])=>{let e=`${t?.contentRect.height}px`;"0px"!==this.prevHeight&&(this.style.setProperty("--prev-height",this.prevHeight),this.style.setProperty("--new-height",e),this.style.animation="w3m-view-height 150ms forwards ease",this.style.height="auto"),setTimeout(()=>{this.prevHeight=e,this.style.animation="unset"},n.ConstantsUtil.ANIMATION_DURATIONS.ModalHeight)}),this.resizeObserver?.observe(this.getWrapper())}disconnectedCallback(){this.resizeObserver?.unobserve(this.getWrapper()),this.unsubscribe.forEach(t=>t())}render(){return i.html`<div class="w3m-router-container" view-direction="${this.viewDirection}">
+      ${this.viewTemplate()}
+    </div>`}viewTemplate(){switch(this.view){case"AccountSettings":return i.html`<w3m-account-settings-view></w3m-account-settings-view>`;case"Account":return i.html`<w3m-account-view></w3m-account-view>`;case"AllWallets":return i.html`<w3m-all-wallets-view></w3m-all-wallets-view>`;case"ApproveTransaction":return i.html`<w3m-approve-transaction-view></w3m-approve-transaction-view>`;case"BuyInProgress":return i.html`<w3m-buy-in-progress-view></w3m-buy-in-progress-view>`;case"ChooseAccountName":return i.html`<w3m-choose-account-name-view></w3m-choose-account-name-view>`;case"Connect":default:return i.html`<w3m-connect-view></w3m-connect-view>`;case"Create":return i.html`<w3m-connect-view walletGuide="explore"></w3m-connect-view>`;case"ConnectingWalletConnect":return i.html`<w3m-connecting-wc-view></w3m-connecting-wc-view>`;case"ConnectingWalletConnectBasic":return i.html`<w3m-connecting-wc-basic-view></w3m-connecting-wc-basic-view>`;case"ConnectingExternal":return i.html`<w3m-connecting-external-view></w3m-connecting-external-view>`;case"ConnectingSiwe":return i.html`<w3m-connecting-siwe-view></w3m-connecting-siwe-view>`;case"ConnectWallets":return i.html`<w3m-connect-wallets-view></w3m-connect-wallets-view>`;case"ConnectSocials":return i.html`<w3m-connect-socials-view></w3m-connect-socials-view>`;case"ConnectingSocial":return i.html`<w3m-connecting-social-view></w3m-connecting-social-view>`;case"Downloads":return i.html`<w3m-downloads-view></w3m-downloads-view>`;case"EmailLogin":return i.html`<w3m-email-login-view></w3m-email-login-view>`;case"EmailVerifyOtp":return i.html`<w3m-email-verify-otp-view></w3m-email-verify-otp-view>`;case"EmailVerifyDevice":return i.html`<w3m-email-verify-device-view></w3m-email-verify-device-view>`;case"GetWallet":return i.html`<w3m-get-wallet-view></w3m-get-wallet-view>`;case"Networks":return i.html`<w3m-networks-view></w3m-networks-view>`;case"SwitchNetwork":return i.html`<w3m-network-switch-view></w3m-network-switch-view>`;case"Profile":return i.html`<w3m-profile-view></w3m-profile-view>`;case"SwitchAddress":return i.html`<w3m-switch-address-view></w3m-switch-address-view>`;case"Transactions":return i.html`<w3m-transactions-view></w3m-transactions-view>`;case"OnRampProviders":return i.html`<w3m-onramp-providers-view></w3m-onramp-providers-view>`;case"OnRampActivity":return i.html`<w3m-onramp-activity-view></w3m-onramp-activity-view>`;case"OnRampTokenSelect":return i.html`<w3m-onramp-token-select-view></w3m-onramp-token-select-view>`;case"OnRampFiatSelect":return i.html`<w3m-onramp-fiat-select-view></w3m-onramp-fiat-select-view>`;case"UpgradeEmailWallet":return i.html`<w3m-upgrade-wallet-view></w3m-upgrade-wallet-view>`;case"UpdateEmailWallet":return i.html`<w3m-update-email-wallet-view></w3m-update-email-wallet-view>`;case"UpdateEmailPrimaryOtp":return i.html`<w3m-update-email-primary-otp-view></w3m-update-email-primary-otp-view>`;case"UpdateEmailSecondaryOtp":return i.html`<w3m-update-email-secondary-otp-view></w3m-update-email-secondary-otp-view>`;case"UnsupportedChain":return i.html`<w3m-unsupported-chain-view></w3m-unsupported-chain-view>`;case"Swap":return i.html`<w3m-swap-view></w3m-swap-view>`;case"SwapSelectToken":return i.html`<w3m-swap-select-token-view></w3m-swap-select-token-view>`;case"SwapPreview":return i.html`<w3m-swap-preview-view></w3m-swap-preview-view>`;case"WalletSend":return i.html`<w3m-wallet-send-view></w3m-wallet-send-view>`;case"WalletSendSelectToken":return i.html`<w3m-wallet-send-select-token-view></w3m-wallet-send-select-token-view>`;case"WalletSendPreview":return i.html`<w3m-wallet-send-preview-view></w3m-wallet-send-preview-view>`;case"WhatIsABuy":return i.html`<w3m-what-is-a-buy-view></w3m-what-is-a-buy-view>`;case"WalletReceive":return i.html`<w3m-wallet-receive-view></w3m-wallet-receive-view>`;case"WalletCompatibleNetworks":return i.html`<w3m-wallet-compatible-networks-view></w3m-wallet-compatible-networks-view>`;case"WhatIsAWallet":return i.html`<w3m-what-is-a-wallet-view></w3m-what-is-a-wallet-view>`;case"ConnectingMultiChain":return i.html`<w3m-connecting-multi-chain-view></w3m-connecting-multi-chain-view>`;case"WhatIsANetwork":return i.html`<w3m-what-is-a-network-view></w3m-what-is-a-network-view>`;case"ConnectingFarcaster":return i.html`<w3m-connecting-farcaster-view></w3m-connecting-farcaster-view>`;case"SwitchActiveChain":return i.html`<w3m-switch-active-chain-view></w3m-switch-active-chain-view>`;case"RegisterAccountName":return i.html`<w3m-register-account-name-view></w3m-register-account-name-view>`;case"RegisterAccountNameSuccess":return i.html`<w3m-register-account-name-success-view></w3m-register-account-name-success-view>`;case"SmartSessionCreated":return i.html`<w3m-smart-session-created-view></w3m-smart-session-created-view>`;case"SmartSessionList":return i.html`<w3m-smart-session-list-view></w3m-smart-session-list-view>`;case"SIWXSignMessage":return i.html`<w3m-siwx-sign-message-view></w3m-siwx-sign-message-view>`}}onViewChange(t){o.TooltipController.hide();let e=n.ConstantsUtil.VIEW_DIRECTION.Next,{history:i}=r.RouterController.state;i.length<this.prevHistoryLength&&(e=n.ConstantsUtil.VIEW_DIRECTION.Prev),this.prevHistoryLength=i.length,this.viewDirection=e,setTimeout(()=>{this.view=t},n.ConstantsUtil.ANIMATION_DURATIONS.ViewTransition)}getWrapper(){return this.shadowRoot?.querySelector("div")}};d.styles=c,u([(0,a.state)()],d.prototype,"view",void 0),u([(0,a.state)()],d.prototype,"viewDirection",void 0),d=u([(0,s.customElement)("w3m-router")],d),t.s(["W3mRouter",()=>d],506776)},858936,696430,58157,t=>{"use strict";t.i(24727);var e=t.i(453404),i=t.i(841066);t.i(428531);var a=t.i(88083);t.i(848253);var r=t.i(844696),o=t.i(669883),s=t.i(527065);let n=s.css`
+  button {
+    border-radius: var(--local-border-radius);
+    color: var(--wui-color-fg-100);
+    padding: var(--local-padding);
+  }
+
+  @media (max-width: 700px) {
+    button {
+      padding: var(--wui-spacing-s);
+    }
+  }
+
+  button > wui-icon {
+    pointer-events: none;
+  }
+
+  button:disabled > wui-icon {
+    color: var(--wui-color-bg-300) !important;
+  }
+
+  button:disabled {
+    background-color: transparent;
+  }
+`;var l=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let c=class extends e.LitElement{constructor(){super(...arguments),this.size="md",this.disabled=!1,this.icon="copy",this.iconColor="inherit"}render(){let t="lg"===this.size?"--wui-border-radius-xs":"--wui-border-radius-xxs",e="lg"===this.size?"--wui-spacing-1xs":"--wui-spacing-2xs";return this.style.cssText=`
+    --local-border-radius: var(${t});
+    --local-padding: var(${e});
+`,i.html`
+      <button ?disabled=${this.disabled}>
+        <wui-icon color=${this.iconColor} size=${this.size} name=${this.icon}></wui-icon>
+      </button>
+    `}};c.styles=[r.resetStyles,r.elementStyles,r.colorStyles,n],l([(0,a.property)()],c.prototype,"size",void 0),l([(0,a.property)({type:Boolean})],c.prototype,"disabled",void 0),l([(0,a.property)()],c.prototype,"icon",void 0),l([(0,a.property)()],c.prototype,"iconColor",void 0),c=l([(0,o.customElement)("wui-icon-link")],c),t.s([],858936);var u=e;t.i(733610);let d=s.css`
+  :host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--wui-spacing-m);
+    padding: 0 var(--wui-spacing-3xs) !important;
+    border-radius: var(--wui-border-radius-5xs);
+    transition:
+      border-radius var(--wui-duration-lg) var(--wui-ease-out-power-1),
+      background-color var(--wui-duration-lg) var(--wui-ease-out-power-1);
+    will-change: border-radius, background-color;
+  }
+
+  :host > wui-text {
+    transform: translateY(5%);
+  }
+
+  :host([data-variant='main']) {
+    background-color: var(--wui-color-accent-glass-015);
+    color: var(--wui-color-accent-100);
+  }
+
+  :host([data-variant='shade']) {
+    background-color: var(--wui-color-gray-glass-010);
+    color: var(--wui-color-fg-200);
+  }
+
+  :host([data-variant='success']) {
+    background-color: var(--wui-icon-box-bg-success-100);
+    color: var(--wui-color-success-100);
+  }
+
+  :host([data-variant='error']) {
+    background-color: var(--wui-icon-box-bg-error-100);
+    color: var(--wui-color-error-100);
+  }
+
+  :host([data-size='lg']) {
+    padding: 11px 5px !important;
+  }
+
+  :host([data-size='lg']) > wui-text {
+    transform: translateY(2%);
+  }
+`;var p=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let h=class extends u.LitElement{constructor(){super(...arguments),this.variant="main",this.size="lg"}render(){this.dataset.variant=this.variant,this.dataset.size=this.size;let t="md"===this.size?"mini-700":"micro-700";return i.html`
+      <wui-text data-variant=${this.variant} variant=${t} color="inherit">
+        <slot></slot>
+      </wui-text>
+    `}};h.styles=[r.resetStyles,d],p([(0,a.property)()],h.prototype,"variant",void 0),p([(0,a.property)()],h.prototype,"size",void 0),h=p([(0,o.customElement)("wui-tag")],h),t.s([],696430),t.s([],58157)},425452,35217,t=>{"use strict";t.i(24727);var e=t.i(453404),i=t.i(841066);t.i(428531);var a=t.i(88083);t.i(848253),t.i(612471),t.i(733610);var r=t.i(844696),o=t.i(28731),s=t.i(669883),n=t.i(527065);let l=n.css`
+  a {
+    border: 1px solid var(--wui-color-gray-glass-010);
+    border-radius: var(--wui-border-radius-3xl);
+  }
+
+  wui-image {
+    border-radius: var(--wui-border-radius-3xl);
+    overflow: hidden;
+  }
+
+  a.disabled > wui-icon:not(.image-icon),
+  a.disabled > wui-image {
+    filter: grayscale(1);
+  }
+
+  a[data-variant='fill'] {
+    color: var(--wui-color-inverse-100);
+    background-color: var(--wui-color-accent-100);
+  }
+
+  a[data-variant='shade'],
+  a[data-variant='shadeSmall'] {
+    background-color: transparent;
+    background-color: var(--wui-color-gray-glass-010);
+    color: var(--wui-color-fg-200);
+  }
+
+  a[data-variant='success'] {
+    column-gap: var(--wui-spacing-xxs);
+    border: 1px solid var(--wui-color-success-glass-010);
+    background-color: var(--wui-color-success-glass-010);
+    color: var(--wui-color-success-100);
+  }
+
+  a[data-variant='error'] {
+    column-gap: var(--wui-spacing-xxs);
+    border: 1px solid var(--wui-color-error-glass-010);
+    background-color: var(--wui-color-error-glass-010);
+    color: var(--wui-color-error-100);
+  }
+
+  a[data-variant='transparent'] {
+    column-gap: var(--wui-spacing-xxs);
+    background-color: transparent;
+    color: var(--wui-color-fg-150);
+  }
+
+  a[data-variant='transparent'],
+  a[data-variant='success'],
+  a[data-variant='shadeSmall'],
+  a[data-variant='error'] {
+    padding: 7px var(--wui-spacing-s) 7px 10px;
+  }
+
+  a[data-variant='transparent']:has(wui-text:first-child),
+  a[data-variant='success']:has(wui-text:first-child),
+  a[data-variant='shadeSmall']:has(wui-text:first-child),
+  a[data-variant='error']:has(wui-text:first-child) {
+    padding: 7px var(--wui-spacing-s);
+  }
+
+  a[data-variant='fill'],
+  a[data-variant='shade'] {
+    column-gap: var(--wui-spacing-xs);
+    padding: var(--wui-spacing-xxs) var(--wui-spacing-m) var(--wui-spacing-xxs)
+      var(--wui-spacing-xs);
+  }
+
+  a[data-variant='fill']:has(wui-text:first-child),
+  a[data-variant='shade']:has(wui-text:first-child) {
+    padding: 9px var(--wui-spacing-m) 9px var(--wui-spacing-m);
+  }
+
+  a[data-variant='fill'] > wui-image,
+  a[data-variant='shade'] > wui-image {
+    width: 24px;
+    height: 24px;
+  }
+
+  a[data-variant='fill'] > wui-image {
+    box-shadow: inset 0 0 0 1px var(--wui-color-accent-090);
+  }
+
+  a[data-variant='shade'] > wui-image,
+  a[data-variant='shadeSmall'] > wui-image {
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-010);
+  }
+
+  a[data-variant='fill'] > wui-icon:not(.image-icon),
+  a[data-variant='shade'] > wui-icon:not(.image-icon) {
+    width: 14px;
+    height: 14px;
+  }
+
+  a[data-variant='transparent'] > wui-image,
+  a[data-variant='success'] > wui-image,
+  a[data-variant='shadeSmall'] > wui-image,
+  a[data-variant='error'] > wui-image {
+    width: 14px;
+    height: 14px;
+  }
+
+  a[data-variant='transparent'] > wui-icon:not(.image-icon),
+  a[data-variant='success'] > wui-icon:not(.image-icon),
+  a[data-variant='shadeSmall'] > wui-icon:not(.image-icon),
+  a[data-variant='error'] > wui-icon:not(.image-icon) {
+    width: 12px;
+    height: 12px;
+  }
+
+  a[data-variant='fill']:focus-visible {
+    background-color: var(--wui-color-accent-090);
+  }
+
+  a[data-variant='shade']:focus-visible,
+  a[data-variant='shadeSmall']:focus-visible {
+    background-color: var(--wui-color-gray-glass-015);
+  }
+
+  a[data-variant='transparent']:focus-visible {
+    background-color: var(--wui-color-gray-glass-005);
+  }
+
+  a[data-variant='success']:focus-visible {
+    background-color: var(--wui-color-success-glass-015);
+  }
+
+  a[data-variant='error']:focus-visible {
+    background-color: var(--wui-color-error-glass-015);
+  }
+
+  a.disabled {
+    color: var(--wui-color-gray-glass-015);
+    background-color: var(--wui-color-gray-glass-015);
+    pointer-events: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a[data-variant='fill']:hover {
+      background-color: var(--wui-color-accent-090);
+    }
+
+    a[data-variant='shade']:hover,
+    a[data-variant='shadeSmall']:hover {
+      background-color: var(--wui-color-gray-glass-015);
+    }
+
+    a[data-variant='transparent']:hover {
+      background-color: var(--wui-color-gray-glass-005);
+    }
+
+    a[data-variant='success']:hover {
+      background-color: var(--wui-color-success-glass-015);
+    }
+
+    a[data-variant='error']:hover {
+      background-color: var(--wui-color-error-glass-015);
+    }
+  }
+
+  a[data-variant='fill']:active {
+    background-color: var(--wui-color-accent-080);
+  }
+
+  a[data-variant='shade']:active,
+  a[data-variant='shadeSmall']:active {
+    background-color: var(--wui-color-gray-glass-020);
+  }
+
+  a[data-variant='transparent']:active {
+    background-color: var(--wui-color-gray-glass-010);
+  }
+
+  a[data-variant='success']:active {
+    background-color: var(--wui-color-success-glass-020);
+  }
+
+  a[data-variant='error']:active {
+    background-color: var(--wui-color-error-glass-020);
+  }
+`;var c=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let u=class extends e.LitElement{constructor(){super(...arguments),this.variant="fill",this.imageSrc=void 0,this.imageIcon=void 0,this.imageIconSize="md",this.disabled=!1,this.icon="externalLink",this.href="",this.text=void 0}render(){let t="success"===this.variant||"transparent"===this.variant||"shadeSmall"===this.variant;return i.html`
+      <a
+        rel="noreferrer"
+        target="_blank"
+        href=${this.href}
+        class=${this.disabled?"disabled":""}
+        data-variant=${this.variant}
+      >
+        ${this.imageTemplate()}
+        <wui-text variant=${t?"small-600":"paragraph-600"} color="inherit">
+          ${this.title?this.title:o.UiHelperUtil.getHostName(this.href)}
+        </wui-text>
+        <wui-icon name=${this.icon} color="inherit" size="inherit"></wui-icon>
+      </a>
+    `}imageTemplate(){return this.imageSrc?i.html`<wui-image src=${this.imageSrc}></wui-image>`:this.imageIcon?i.html`<wui-icon
+        name=${this.imageIcon}
+        color="inherit"
+        size=${this.imageIconSize}
+        class="image-icon"
+      ></wui-icon>`:null}};u.styles=[r.resetStyles,r.elementStyles,l],c([(0,a.property)()],u.prototype,"variant",void 0),c([(0,a.property)()],u.prototype,"imageSrc",void 0),c([(0,a.property)()],u.prototype,"imageIcon",void 0),c([(0,a.property)()],u.prototype,"imageIconSize",void 0),c([(0,a.property)({type:Boolean})],u.prototype,"disabled",void 0),c([(0,a.property)()],u.prototype,"icon",void 0),c([(0,a.property)()],u.prototype,"href",void 0),c([(0,a.property)()],u.prototype,"text",void 0),u=c([(0,s.customElement)("wui-chip")],u),t.s([],425452),t.s(["NavigationUtil",0,{URLS:{FAQ:"https://walletconnect.com/faq"}}],35217)},231412,t=>{"use strict";t.i(24727);var e=t.i(453404),i=t.i(841066);t.i(428531);var a=t.i(88083);t.i(848253),t.i(612471);var r=t.i(709626);function o(t,e,i){return t!==e&&(t-e<0?e-t:t-e)<=i+.1}let s={generate({uri:t,size:e,logoSize:a,dotColor:s="#141414"}){let n,l,c=[],u=(l=Math.sqrt((n=Array.prototype.slice.call(r.default.create(t,{errorCorrectionLevel:"Q"}).modules.data,0)).length),n.reduce((t,e,i)=>(i%l==0?t.push([e]):t[t.length-1].push(e))&&t,[])),d=e/u.length,p=[{x:0,y:0},{x:1,y:0},{x:0,y:1}];p.forEach(({x:t,y:e})=>{let a=(u.length-7)*d*t,r=(u.length-7)*d*e;for(let t=0;t<p.length;t+=1){let e=d*(7-2*t);c.push(i.svg`
+            <rect
+              fill=${2===t?s:"transparent"}
+              width=${0===t?e-5:e}
+              rx= ${0===t?(e-5)*.45:.45*e}
+              ry= ${0===t?(e-5)*.45:.45*e}
+              stroke=${s}
+              stroke-width=${5*(0===t)}
+              height=${0===t?e-5:e}
+              x= ${0===t?r+d*t+2.5:r+d*t}
+              y= ${0===t?a+d*t+2.5:a+d*t}
+            />
+          `)}});let h=Math.floor((a+25)/d),v=u.length/2-h/2,w=u.length/2+h/2-1,g=[];u.forEach((t,e)=>{t.forEach((t,i)=>{!u[e][i]||e<7&&i<7||e>u.length-8&&i<7||e<7&&i>u.length-8||e>v&&e<w&&i>v&&i<w||g.push([e*d+d/2,i*d+d/2])})});let m={};return g.forEach(([t,e])=>{m[t]?m[t]?.push(e):m[t]=[e]}),Object.entries(m).map(([t,e])=>{let i=e.filter(t=>e.every(e=>!o(t,e,d)));return[Number(t),i]}).forEach(([t,e])=>{e.forEach(e=>{c.push(i.svg`<circle cx=${t} cy=${e} fill=${s} r=${d/2.5} />`)})}),Object.entries(m).filter(([t,e])=>e.length>1).map(([t,e])=>{let i=e.filter(t=>e.some(e=>o(t,e,d)));return[Number(t),i]}).map(([t,e])=>{e.sort((t,e)=>t<e?-1:1);let i=[];for(let t of e){let e=i.find(e=>e.some(e=>o(t,e,d)));e?e.push(t):i.push([t])}return[t,i.map(t=>[t[0],t[t.length-1]])]}).forEach(([t,e])=>{e.forEach(([e,a])=>{c.push(i.svg`
+              <line
+                x1=${t}
+                x2=${t}
+                y1=${e}
+                y2=${a}
+                stroke=${s}
+                stroke-width=${d/1.25}
+                stroke-linecap="round"
+              />
+            `)})}),c}};var n=t.i(844696),l=t.i(669883),c=t.i(527065);let u=c.css`
+  :host {
+    position: relative;
+    user-select: none;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    width: var(--local-size);
+  }
+
+  :host([data-theme='dark']) {
+    border-radius: clamp(0px, var(--wui-border-radius-l), 40px);
+    background-color: var(--wui-color-inverse-100);
+    padding: var(--wui-spacing-l);
+  }
+
+  :host([data-theme='light']) {
+    box-shadow: 0 0 0 1px var(--wui-color-bg-125);
+    background-color: var(--wui-color-bg-125);
+  }
+
+  :host([data-clear='true']) > wui-icon {
+    display: none;
+  }
+
+  svg:first-child,
+  wui-image,
+  wui-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  wui-image {
+    width: 25%;
+    height: 25%;
+    border-radius: var(--wui-border-radius-xs);
+  }
+
+  wui-icon {
+    width: 100%;
+    height: 100%;
+    color: var(--local-icon-color) !important;
+    transform: translateY(-50%) translateX(-50%) scale(0.25);
+  }
+`;var d=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let p=class extends e.LitElement{constructor(){super(...arguments),this.uri="",this.size=0,this.theme="dark",this.imageSrc=void 0,this.alt=void 0,this.arenaClear=void 0,this.farcaster=void 0}render(){return this.dataset.theme=this.theme,this.dataset.clear=String(this.arenaClear),this.style.cssText=`
+     --local-size: ${this.size}px;
+     --local-icon-color: ${this.color??"#3396ff"}
+    `,i.html`${this.templateVisual()} ${this.templateSvg()}`}templateSvg(){let t="light"===this.theme?this.size:this.size-32;return i.svg`
+      <svg height=${t} width=${t}>
+        ${s.generate({uri:this.uri,size:t,logoSize:this.arenaClear?0:t/4,dotColor:this.color})}
+      </svg>
+    `}templateVisual(){return this.imageSrc?i.html`<wui-image src=${this.imageSrc} alt=${this.alt??"logo"}></wui-image>`:this.farcaster?i.html`<wui-icon
+        class="farcaster"
+        size="inherit"
+        color="inherit"
+        name="farcaster"
+      ></wui-icon>`:i.html`<wui-icon size="inherit" color="inherit" name="walletConnect"></wui-icon>`}};p.styles=[n.resetStyles,u],d([(0,a.property)()],p.prototype,"uri",void 0),d([(0,a.property)({type:Number})],p.prototype,"size",void 0),d([(0,a.property)()],p.prototype,"theme",void 0),d([(0,a.property)()],p.prototype,"imageSrc",void 0),d([(0,a.property)()],p.prototype,"alt",void 0),d([(0,a.property)()],p.prototype,"color",void 0),d([(0,a.property)({type:Boolean})],p.prototype,"arenaClear",void 0),d([(0,a.property)({type:Boolean})],p.prototype,"farcaster",void 0),p=d([(0,l.customElement)("wui-qr-code")],p),t.s([],231412)},932394,t=>{"use strict";t.i(24727);var e=t.i(453404),i=t.i(841066);t.i(428531);var a=t.i(88083);t.i(848253),t.i(612471),t.i(733610);var r=t.i(844696),o=t.i(669883),s=t.i(527065);let n=s.css`
+  button {
+    border: none;
+    border-radius: var(--wui-border-radius-3xl);
+  }
+
+  button[data-variant='main'] {
+    background-color: var(--wui-color-accent-100);
+    color: var(--wui-color-inverse-100);
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-010);
+  }
+
+  button[data-variant='accent'] {
+    background-color: var(--wui-color-accent-glass-010);
+    color: var(--wui-color-accent-100);
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-005);
+  }
+
+  button[data-variant='gray'] {
+    background-color: transparent;
+    color: var(--wui-color-fg-200);
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-010);
+  }
+
+  button[data-variant='shade'] {
+    background-color: transparent;
+    color: var(--wui-color-accent-100);
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-010);
+  }
+
+  button[data-size='sm'] {
+    height: 32px;
+    padding: 0 var(--wui-spacing-s);
+  }
+
+  button[data-size='md'] {
+    height: 40px;
+    padding: 0 var(--wui-spacing-l);
+  }
+
+  button[data-size='sm'] > wui-image {
+    width: 16px;
+    height: 16px;
+  }
+
+  button[data-size='md'] > wui-image {
+    width: 24px;
+    height: 24px;
+  }
+
+  button[data-size='sm'] > wui-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  button[data-size='md'] > wui-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  wui-image {
+    border-radius: var(--wui-border-radius-3xl);
+    overflow: hidden;
+  }
+
+  button.disabled > wui-icon,
+  button.disabled > wui-image {
+    filter: grayscale(1);
+  }
+
+  button[data-variant='main'] > wui-image {
+    box-shadow: inset 0 0 0 1px var(--wui-color-accent-090);
+  }
+
+  button[data-variant='shade'] > wui-image,
+  button[data-variant='gray'] > wui-image {
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-010);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    button[data-variant='main']:focus-visible {
+      background-color: var(--wui-color-accent-090);
+    }
+
+    button[data-variant='main']:hover:enabled {
+      background-color: var(--wui-color-accent-090);
+    }
+
+    button[data-variant='main']:active:enabled {
+      background-color: var(--wui-color-accent-080);
+    }
+
+    button[data-variant='accent']:hover:enabled {
+      background-color: var(--wui-color-accent-glass-015);
+    }
+
+    button[data-variant='accent']:active:enabled {
+      background-color: var(--wui-color-accent-glass-020);
+    }
+
+    button[data-variant='shade']:focus-visible,
+    button[data-variant='gray']:focus-visible,
+    button[data-variant='shade']:hover,
+    button[data-variant='gray']:hover {
+      background-color: var(--wui-color-gray-glass-002);
+    }
+
+    button[data-variant='gray']:active,
+    button[data-variant='shade']:active {
+      background-color: var(--wui-color-gray-glass-005);
+    }
+  }
+
+  button.disabled {
+    color: var(--wui-color-gray-glass-020);
+    background-color: var(--wui-color-gray-glass-002);
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-002);
+    pointer-events: none;
+  }
+`;var l=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let c=class extends e.LitElement{constructor(){super(...arguments),this.variant="accent",this.imageSrc="",this.disabled=!1,this.icon="externalLink",this.size="md",this.text=""}render(){let t="sm"===this.size?"small-600":"paragraph-600";return i.html`
+      <button
+        class=${this.disabled?"disabled":""}
+        data-variant=${this.variant}
+        data-size=${this.size}
+      >
+        ${this.imageSrc?i.html`<wui-image src=${this.imageSrc}></wui-image>`:null}
+        <wui-text variant=${t} color="inherit"> ${this.text} </wui-text>
+        <wui-icon name=${this.icon} color="inherit" size="inherit"></wui-icon>
+      </button>
+    `}};c.styles=[r.resetStyles,r.elementStyles,n],l([(0,a.property)()],c.prototype,"variant",void 0),l([(0,a.property)()],c.prototype,"imageSrc",void 0),l([(0,a.property)({type:Boolean})],c.prototype,"disabled",void 0),l([(0,a.property)()],c.prototype,"icon",void 0),l([(0,a.property)()],c.prototype,"size",void 0),l([(0,a.property)()],c.prototype,"text",void 0),c=l([(0,o.customElement)("wui-chip-button")],c),t.s([],932394)},154352,129872,206507,73728,835124,t=>{"use strict";var e=t.i(550338),i=t.i(971984);let a=(0,e.proxy)({isLegalCheckboxChecked:!1}),r={state:a,subscribe:t=>(0,e.subscribe)(a,()=>t(a)),subscribeKey:(t,e)=>(0,i.subscribeKey)(a,t,e),setIsLegalCheckboxChecked(t){a.isLegalCheckboxChecked=t}};t.s(["OptionsStateController",0,r],154352),t.i(24727);var o=t.i(453404),s=t.i(841066);t.i(428531);var n=t.i(666033),l=t.i(478117);t.i(824984);var c=t.i(669883),u=o,d=t.i(88083);t.i(372412);var p=t.i(229199);t.i(818731);var h=t.i(49976);t.i(848253);var v=t.i(844696),w=t.i(527065);let g=w.css`
+  label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    column-gap: var(--wui-spacing-1xs);
+  }
+
+  label > input[type='checkbox'] {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  label > span {
+    width: var(--wui-spacing-xl);
+    height: var(--wui-spacing-xl);
+    min-width: var(--wui-spacing-xl);
+    min-height: var(--wui-spacing-xl);
+    border-radius: var(--wui-border-radius-3xs);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--wui-color-gray-glass-010);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--wui-ease-out-power-1) var(--wui-duration-lg);
+    will-change: background-color;
+  }
+
+  label > span:hover,
+  label > input[type='checkbox']:focus-visible + span {
+    background-color: var(--wui-color-gray-glass-010);
+  }
+
+  label input[type='checkbox']:checked + span {
+    background-color: var(--wui-color-blue-base-90);
+  }
+
+  label > span > wui-icon {
+    opacity: 0;
+    transition: opacity var(--wui-ease-out-power-1) var(--wui-duration-lg);
+    will-change: opacity;
+  }
+
+  label > input[type='checkbox']:checked + span wui-icon {
+    opacity: 1;
+  }
+`;var m=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let b=class extends u.LitElement{constructor(){super(...arguments),this.inputElementRef=(0,h.createRef)(),this.checked=void 0}render(){return s.html`
+      <label>
+        <input
+          ${(0,h.ref)(this.inputElementRef)}
+          ?checked=${(0,p.ifDefined)(this.checked)}
+          type="checkbox"
+          @change=${this.dispatchChangeEvent}
+        />
+        <span>
+          <wui-icon name="checkmarkBold" color="inverse-100" size="xxs"></wui-icon>
+        </span>
+        <slot></slot>
+      </label>
+    `}dispatchChangeEvent(){this.dispatchEvent(new CustomEvent("checkboxChange",{detail:this.inputElementRef.value?.checked,bubbles:!0,composed:!0}))}};b.styles=[v.resetStyles,g],m([(0,d.property)({type:Boolean})],b.prototype,"checked",void 0),b=m([(0,c.customElement)("wui-checkbox")],b),t.i(745276);let f=w.css`
+  :host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  wui-checkbox {
+    padding: var(--wui-spacing-s);
+  }
+  a {
+    text-decoration: none;
+    color: var(--wui-color-fg-150);
+    font-weight: 500;
+  }
+`;var y=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let x=class extends o.LitElement{constructor(){super(),this.unsubscribe=[],this.checked=r.state.isLegalCheckboxChecked,this.unsubscribe.push(r.subscribeKey("isLegalCheckboxChecked",t=>{this.checked=t}))}disconnectedCallback(){this.unsubscribe.forEach(t=>t())}render(){let{termsConditionsUrl:t,privacyPolicyUrl:e}=l.OptionsController.state,i=l.OptionsController.state.features?.legalCheckbox;return(t||e)&&i?s.html`
+      <wui-checkbox
+        ?checked=${this.checked}
+        @checkboxChange=${this.onCheckboxChange.bind(this)}
+        data-testid="wui-checkbox"
+      >
+        <wui-text color="fg-250" variant="small-400" align="left">
+          I agree to our ${this.termsTemplate()} ${this.andTemplate()} ${this.privacyTemplate()}
+        </wui-text>
+      </wui-checkbox>
+    `:null}andTemplate(){let{termsConditionsUrl:t,privacyPolicyUrl:e}=l.OptionsController.state;return t&&e?"and":""}termsTemplate(){let{termsConditionsUrl:t}=l.OptionsController.state;return t?s.html`<a rel="noreferrer" target="_blank" href=${t}>terms of service</a>`:null}privacyTemplate(){let{privacyPolicyUrl:t}=l.OptionsController.state;return t?s.html`<a rel="noreferrer" target="_blank" href=${t}>privacy policy</a>`:null}onCheckboxChange(){r.setIsLegalCheckboxChecked(!this.checked)}};x.styles=[f],y([(0,n.state)()],x.prototype,"checked",void 0),x=y([(0,c.customElement)("w3m-legal-checkbox")],x),t.s([],129872);var k=o;t.i(681166);var $=o;t.i(733610),t.i(111231);let C=w.css`
+  .reown-logo {
+    height: var(--wui-spacing-xxl);
+  }
+`,j=class extends $.LitElement{render(){return s.html`
+      <wui-flex
+        justifyContent="center"
+        alignItems="center"
+        gap="xs"
+        .padding=${["0","0","l","0"]}
+      >
+        <wui-text variant="small-500" color="fg-100"> UX by </wui-text>
+        <wui-icon name="reown" size="xxxl" class="reown-logo"></wui-icon>
+      </wui-flex>
+    `}};j.styles=[v.resetStyles,v.elementStyles,C],j=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s}([(0,c.customElement)("wui-ux-by-reown")],j),t.s([],206507);let P=w.css`
+  :host > wui-flex {
+    background-color: var(--wui-color-gray-glass-005);
+    margin-top: var(--wui-spacing-s);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--wui-color-fg-175);
+    font-weight: 500;
+  }
+`,R=class extends k.LitElement{render(){let{termsConditionsUrl:t,privacyPolicyUrl:e}=l.OptionsController.state,i=l.OptionsController.state.features?.legalCheckbox;return(t||e)&&!i?s.html`
+      <wui-flex flexDirection="column">
+        <wui-flex .padding=${["m","s","s","s"]} justifyContent="center">
+          <wui-text color="fg-250" variant="small-400" align="center">
+            By connecting your wallet, you agree to our <br />
+            ${this.termsTemplate()} ${this.andTemplate()} ${this.privacyTemplate()}
+          </wui-text>
+        </wui-flex>
+        <wui-ux-by-reown></wui-ux-by-reown>
+      </wui-flex>
+    `:null}andTemplate(){let{termsConditionsUrl:t,privacyPolicyUrl:e}=l.OptionsController.state;return t&&e?"and":""}termsTemplate(){let{termsConditionsUrl:t}=l.OptionsController.state;return t?s.html`<a href=${t}>Terms of Service</a>`:null}privacyTemplate(){let{privacyPolicyUrl:t}=l.OptionsController.state;return t?s.html`<a href=${t}>Privacy Policy</a>`:null}};R.styles=[P],R=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s}([(0,c.customElement)("w3m-legal-footer")],R),t.s([],73728);var S=o;let O=w.css`
+  :host {
+    display: block;
+    width: var(--wui-box-size-md);
+    height: var(--wui-box-size-md);
+  }
+
+  svg {
+    width: var(--wui-box-size-md);
+    height: var(--wui-box-size-md);
+  }
+
+  rect {
+    fill: none;
+    stroke: var(--wui-color-accent-100);
+    stroke-width: 4px;
+    stroke-linecap: round;
+    animation: dash 1s linear infinite;
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0px;
+    }
+  }
+`;var T=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let z=class extends S.LitElement{constructor(){super(...arguments),this.radius=36}render(){return this.svgLoaderTemplate()}svgLoaderTemplate(){let t=this.radius>50?50:this.radius,e=36-t;return s.html`
+      <svg viewBox="0 0 110 110" width="110" height="110">
+        <rect
+          x="2"
+          y="2"
+          width="106"
+          height="106"
+          rx=${t}
+          stroke-dasharray="${116+e} ${245+e}"
+          stroke-dashoffset=${360+1.75*e}
+        />
+      </svg>
+    `}};z.styles=[v.resetStyles,O],T([(0,d.property)({type:Number})],z.prototype,"radius",void 0),z=T([(0,c.customElement)("wui-loading-thumbnail")],z),t.s([],835124)},360460,714358,696765,t=>{"use strict";var e=t.i(777631),i=t.i(216503),a=t.i(762588),r=t.i(556064),o=t.i(566582),s=t.i(812372),n=t.i(674283),l=t.i(675033);async function c(){o.RouterController.push("ConnectingFarcaster");let t=a.ConnectorController.getAuthConnector();if(t&&!e.AccountController.state.farcasterUrl)try{let{url:a}=await t.provider.getFarcasterUri();e.AccountController.setFarcasterUrl(a,i.ChainController.state.activeChain)}catch(t){o.RouterController.goBack(),s.SnackController.showError(t)}}async function u(t){o.RouterController.push("ConnectingSocial");let r=a.ConnectorController.getAuthConnector(),c=null;try{let a=setTimeout(()=>{throw Error("Social login timed out. Please try again.")},45e3);if(r&&t){if(n.CoreHelperUtil.isTelegram()||(c=function(){try{return n.CoreHelperUtil.returnOpenHref("","popupWindow","width=600,height=800,scrollbars=yes")}catch(t){throw Error("Could not open social popup")}}()),c)e.AccountController.setSocialWindow(c,i.ChainController.state.activeChain);else if(!n.CoreHelperUtil.isTelegram())throw Error("Could not create social popup");let{uri:o}=await r.provider.getSocialRedirectUri({provider:t});if(!o)throw c?.close(),Error("Could not fetch the social redirect uri");if(c&&(c.location.href=o),n.CoreHelperUtil.isTelegram()){l.StorageUtil.setTelegramSocialProvider(t);let e=n.CoreHelperUtil.formatTelegramSocialLoginUrl(o);n.CoreHelperUtil.openHref(e,"_top")}clearTimeout(a)}}catch(t){c?.close(),s.SnackController.showError(t?.message)}}async function d(t){e.AccountController.setSocialProvider(t,i.ChainController.state.activeChain),r.EventsController.sendEvent({type:"track",event:"SOCIAL_LOGIN_STARTED",properties:{provider:t}}),"farcaster"===t?await c():await u(t)}t.s(["executeSocialLogin",()=>d],360460),t.i(24727);var p=t.i(453404),h=t.i(841066);t.i(428531);var v=t.i(88083);t.i(372412);var w=t.i(229199);t.i(733610);var g=t.i(844696),m=t.i(669883),b=p;t.i(848253);var f=t.i(527065);let y=f.css`
+  :host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--wui-border-radius-3xl);
+    border: 1px solid var(--wui-color-gray-glass-005);
+    overflow: hidden;
+  }
+
+  wui-icon {
+    width: 100%;
+    height: 100%;
+  }
+`;var x=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let k=class extends b.LitElement{constructor(){super(...arguments),this.logo="google"}render(){return h.html`<wui-icon color="inherit" size="inherit" name=${this.logo}></wui-icon> `}};k.styles=[g.resetStyles,y],x([(0,v.property)()],k.prototype,"logo",void 0),k=x([(0,m.customElement)("wui-logo")],k),t.s([],714358);let $=f.css`
+  button {
+    column-gap: var(--wui-spacing-s);
+    padding: 7px var(--wui-spacing-l) 7px var(--wui-spacing-xs);
+    width: 100%;
+    justify-content: flex-start;
+    background-color: var(--wui-color-gray-glass-002);
+    border-radius: var(--wui-border-radius-xs);
+    color: var(--wui-color-fg-100);
+  }
+
+  wui-text {
+    text-transform: capitalize;
+  }
+
+  wui-text[data-align='left'] {
+    display: flex;
+    flex: 1;
+  }
+
+  wui-text[data-align='center'] {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .invisible {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  button:disabled {
+    background-color: var(--wui-color-gray-glass-015);
+    color: var(--wui-color-gray-glass-015);
+  }
+`;var C=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let j=class extends p.LitElement{constructor(){super(...arguments),this.logo="google",this.name="Continue with google",this.align="left",this.disabled=!1}render(){return h.html`
+      <button ?disabled=${this.disabled} tabindex=${(0,w.ifDefined)(this.tabIdx)}>
+        <wui-logo logo=${this.logo}></wui-logo>
+        <wui-text
+          data-align=${this.align}
+          variant="paragraph-500"
+          color="inherit"
+          align=${this.align}
+          >${this.name}</wui-text
+        >
+        ${this.templatePlacement()}
+      </button>
+    `}templatePlacement(){return"center"===this.align?h.html` <wui-logo class="invisible" logo=${this.logo}></wui-logo>`:null}};j.styles=[g.resetStyles,g.elementStyles,$],C([(0,v.property)()],j.prototype,"logo",void 0),C([(0,v.property)()],j.prototype,"name",void 0),C([(0,v.property)()],j.prototype,"align",void 0),C([(0,v.property)()],j.prototype,"tabIdx",void 0),C([(0,v.property)({type:Boolean})],j.prototype,"disabled",void 0),j=C([(0,m.customElement)("wui-list-social")],j),t.s([],696765)},461517,t=>{"use strict";t.i(24727);var e=t.i(453404),i=t.i(841066);t.i(604854),t.i(111231);var a=t.i(844696),r=t.i(669883),o=t.i(527065);let s=o.css`
+  :host > wui-flex:first-child {
+    column-gap: var(--wui-spacing-s);
+    padding: 7px var(--wui-spacing-l) 7px var(--wui-spacing-xs);
+    width: 100%;
+  }
+
+  wui-flex {
+    display: flex;
+    flex: 1;
+  }
+`,n=class extends e.LitElement{render(){return i.html`
+      <wui-flex alignItems="center">
+        <wui-shimmer width="40px" height="40px"></wui-shimmer>
+        <wui-flex flexDirection="column" gap="2xs">
+          <wui-shimmer width="72px" height="16px" borderRadius="4xs"></wui-shimmer>
+          <wui-shimmer width="148px" height="14px" borderRadius="4xs"></wui-shimmer>
+        </wui-flex>
+        <wui-shimmer width="24px" height="12px" borderRadius="5xs"></wui-shimmer>
+      </wui-flex>
+    `}};n.styles=[a.resetStyles,s],n=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s}([(0,r.customElement)("wui-transaction-list-item-loader")],n),t.s([],461517)},917361,t=>{"use strict";t.i(24727);var e,i,a=t.i(453404),r=t.i(841066);t.i(428531);var o=t.i(88083),s=t.i(666033),n=t.i(685608),l=t.i(777631),c=t.i(216503),u=t.i(674283),d=t.i(556064),p=t.i(478117),h=t.i(566582),v=t.i(728886);t.i(824984);var w=t.i(980744),g=t.i(669883);t.i(681166),t.i(794566),t.i(752087),t.i(745276);var m=a;t.i(372412);var b=t.i(229199);t.i(848253),t.i(733610),t.i(111231);var f=t.i(844696);(e=i||(i={})).approve="approved",e.bought="bought",e.borrow="borrowed",e.burn="burnt",e.cancel="canceled",e.claim="claimed",e.deploy="deployed",e.deposit="deposited",e.execute="executed",e.mint="minted",e.receive="received",e.repay="repaid",e.send="sent",e.sell="sold",e.stake="staked",e.trade="swapped",e.unstake="unstaked",e.withdraw="withdrawn";var y=a;t.i(612471),t.i(677253);var x=t.i(527065);let k=x.css`
+  :host > wui-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-005);
+    background-color: var(--wui-color-gray-glass-005);
+  }
+
+  :host > wui-flex wui-image {
+    display: block;
+  }
+
+  :host > wui-flex,
+  :host > wui-flex wui-image,
+  .swap-images-container,
+  .swap-images-container.nft,
+  wui-image.nft {
+    border-top-left-radius: var(--local-left-border-radius);
+    border-top-right-radius: var(--local-right-border-radius);
+    border-bottom-left-radius: var(--local-left-border-radius);
+    border-bottom-right-radius: var(--local-right-border-radius);
+  }
+
+  wui-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  wui-icon-box {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(20%, 20%);
+  }
+
+  .swap-images-container {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+  }
+
+  .swap-images-container wui-image:first-child {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: 0%;
+    clip-path: inset(0px calc(50% + 2px) 0px 0%);
+  }
+
+  .swap-images-container wui-image:last-child {
+    clip-path: inset(0px 0px 0px calc(50% + 2px));
+  }
+`;var $=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let C=class extends y.LitElement{constructor(){super(...arguments),this.images=[],this.secondImage={type:void 0,url:""}}render(){let[t,e]=this.images,i=t?.type==="NFT",a=e?.url?"NFT"===e.type:i;return this.style.cssText=`
+    --local-left-border-radius: ${i?"var(--wui-border-radius-xxs)":"var(--wui-border-radius-s)"};
+    --local-right-border-radius: ${a?"var(--wui-border-radius-xxs)":"var(--wui-border-radius-s)"};
+    `,r.html`<wui-flex> ${this.templateVisual()} ${this.templateIcon()} </wui-flex>`}templateVisual(){let[t,e]=this.images,i=t?.type;return 2===this.images.length&&(t?.url||e?.url)?r.html`<div class="swap-images-container">
+        ${t?.url?r.html`<wui-image src=${t.url} alt="Transaction image"></wui-image>`:null}
+        ${e?.url?r.html`<wui-image src=${e.url} alt="Transaction image"></wui-image>`:null}
+      </div>`:t?.url?r.html`<wui-image src=${t.url} alt="Transaction image"></wui-image>`:"NFT"===i?r.html`<wui-icon size="inherit" color="fg-200" name="nftPlaceholder"></wui-icon>`:r.html`<wui-icon size="inherit" color="fg-200" name="coinPlaceholder"></wui-icon>`}templateIcon(){let t,e="accent-100";return(t=this.getIcon(),this.status&&(e=this.getStatusColor()),t)?r.html`
+      <wui-icon-box
+        size="xxs"
+        iconColor=${e}
+        backgroundColor=${e}
+        background="opaque"
+        icon=${t}
+        ?border=${!0}
+        borderColor="wui-color-bg-125"
+      ></wui-icon-box>
+    `:null}getDirectionIcon(){switch(this.direction){case"in":return"arrowBottom";case"out":return"arrowTop";default:return}}getIcon(){return this.onlyDirectionIcon?this.getDirectionIcon():"trade"===this.type?"swapHorizontalBold":"approve"===this.type?"checkmark":"cancel"===this.type?"close":this.getDirectionIcon()}getStatusColor(){switch(this.status){case"confirmed":return"success-100";case"failed":return"error-100";case"pending":return"inverse-100";default:return"accent-100"}}};C.styles=[k],$([(0,o.property)()],C.prototype,"type",void 0),$([(0,o.property)()],C.prototype,"status",void 0),$([(0,o.property)()],C.prototype,"direction",void 0),$([(0,o.property)({type:Boolean})],C.prototype,"onlyDirectionIcon",void 0),$([(0,o.property)({type:Array})],C.prototype,"images",void 0),$([(0,o.property)({type:Object})],C.prototype,"secondImage",void 0),C=$([(0,g.customElement)("wui-transaction-visual")],C);let j=x.css`
+  :host > wui-flex:first-child {
+    align-items: center;
+    column-gap: var(--wui-spacing-s);
+    padding: 6.5px var(--wui-spacing-xs) 6.5px var(--wui-spacing-xs);
+    width: 100%;
+  }
+
+  :host > wui-flex:first-child wui-text:nth-child(1) {
+    text-transform: capitalize;
+  }
+
+  wui-transaction-visual {
+    width: 40px;
+    height: 40px;
+  }
+
+  wui-flex {
+    flex: 1;
+  }
+
+  :host wui-flex wui-flex {
+    overflow: hidden;
+  }
+
+  :host .description-container wui-text span {
+    word-break: break-all;
+  }
+
+  :host .description-container wui-text {
+    overflow: hidden;
+  }
+
+  :host .description-separator-icon {
+    margin: 0px 6px;
+  }
+
+  :host wui-text > span {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+`;var P=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let R=class extends m.LitElement{constructor(){super(...arguments),this.type="approve",this.onlyDirectionIcon=!1,this.images=[],this.price=[],this.amount=[],this.symbol=[]}render(){return r.html`
+      <wui-flex>
+        <wui-transaction-visual
+          .status=${this.status}
+          direction=${(0,b.ifDefined)(this.direction)}
+          type=${this.type}
+          onlyDirectionIcon=${(0,b.ifDefined)(this.onlyDirectionIcon)}
+          .images=${this.images}
+        ></wui-transaction-visual>
+        <wui-flex flexDirection="column" gap="3xs">
+          <wui-text variant="paragraph-600" color="fg-100">
+            ${i[this.type]||this.type}
+          </wui-text>
+          <wui-flex class="description-container">
+            ${this.templateDescription()} ${this.templateSecondDescription()}
+          </wui-flex>
+        </wui-flex>
+        <wui-text variant="micro-700" color="fg-300"><span>${this.date}</span></wui-text>
+      </wui-flex>
+    `}templateDescription(){let t=this.descriptions?.[0];return t?r.html`
+          <wui-text variant="small-500" color="fg-200">
+            <span>${t}</span>
+          </wui-text>
+        `:null}templateSecondDescription(){let t=this.descriptions?.[1];return t?r.html`
+          <wui-icon class="description-separator-icon" size="xxs" name="arrowRight"></wui-icon>
+          <wui-text variant="small-400" color="fg-200">
+            <span>${t}</span>
+          </wui-text>
+        `:null}};R.styles=[f.resetStyles,j],P([(0,o.property)()],R.prototype,"type",void 0),P([(0,o.property)({type:Array})],R.prototype,"descriptions",void 0),P([(0,o.property)()],R.prototype,"date",void 0),P([(0,o.property)({type:Boolean})],R.prototype,"onlyDirectionIcon",void 0),P([(0,o.property)()],R.prototype,"status",void 0),P([(0,o.property)()],R.prototype,"direction",void 0),P([(0,o.property)({type:Array})],R.prototype,"images",void 0),P([(0,o.property)({type:Array})],R.prototype,"price",void 0),P([(0,o.property)({type:Array})],R.prototype,"amount",void 0),P([(0,o.property)({type:Array})],R.prototype,"symbol",void 0),R=P([(0,g.customElement)("wui-transaction-list-item")],R),t.i(461517);var S=t.i(389546);let O=x.css`
+  :host {
+    min-height: 100%;
+  }
+
+  .group-container[last-group='true'] {
+    padding-bottom: var(--wui-spacing-m);
+  }
+
+  .contentContainer {
+    height: 280px;
+  }
+
+  .contentContainer > wui-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--wui-border-radius-xxs);
+  }
+
+  .contentContainer > .textContent {
+    width: 65%;
+  }
+
+  .emptyContainer {
+    height: 100%;
+  }
+`;var T=function(t,e,i,a){var r,o=arguments.length,s=o<3?e:null===a?a=Object.getOwnPropertyDescriptor(e,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,i,a);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(o<3?r(s):o>3?r(e,i,s):r(e,i))||s);return o>3&&s&&Object.defineProperty(e,i,s),s};let z="last-transaction",E=class extends a.LitElement{constructor(){super(),this.unsubscribe=[],this.paginationObserver=void 0,this.page="activity",this.caipAddress=c.ChainController.state.activeCaipAddress,this.transactionsByYear=v.TransactionsController.state.transactionsByYear,this.loading=v.TransactionsController.state.loading,this.empty=v.TransactionsController.state.empty,this.next=v.TransactionsController.state.next,v.TransactionsController.clearCursor(),this.unsubscribe.push(c.ChainController.subscribeKey("activeCaipAddress",t=>{t&&this.caipAddress!==t&&(v.TransactionsController.resetTransactions(),v.TransactionsController.fetchTransactions(t)),this.caipAddress=t}),c.ChainController.subscribeKey("activeCaipNetwork",()=>{this.updateTransactionView()}),v.TransactionsController.subscribe(t=>{this.transactionsByYear=t.transactionsByYear,this.loading=t.loading,this.empty=t.empty,this.next=t.next}))}firstUpdated(){this.updateTransactionView(),this.createPaginationObserver()}updated(){this.setPaginationObserver()}disconnectedCallback(){this.unsubscribe.forEach(t=>t())}render(){return r.html` ${this.empty?null:this.templateTransactionsByYear()}
+    ${this.loading?this.templateLoading():null}
+    ${!this.loading&&this.empty?this.templateEmpty():null}`}updateTransactionView(){let t=c.ChainController.state.activeCaipNetwork?.caipNetworkId;v.TransactionsController.state.lastNetworkInView!==t&&(v.TransactionsController.resetTransactions(),this.caipAddress&&v.TransactionsController.fetchTransactions(u.CoreHelperUtil.getPlainAddress(this.caipAddress))),v.TransactionsController.setLastNetworkInView(t)}templateTransactionsByYear(){return Object.keys(this.transactionsByYear).sort().reverse().map(t=>{let e=parseInt(t,10),i=Array(12).fill(null).map((t,i)=>({groupTitle:w.TransactionUtil.getTransactionGroupTitle(e,i),transactions:this.transactionsByYear[e]?.[i]})).filter(({transactions:t})=>t).reverse();return i.map(({groupTitle:t,transactions:e},a)=>{let o=a===i.length-1;return e?r.html`
+          <wui-flex
+            flexDirection="column"
+            class="group-container"
+            last-group="${o?"true":"false"}"
+            data-testid="month-indexes"
+          >
+            <wui-flex
+              alignItems="center"
+              flexDirection="row"
+              .padding=${["xs","s","s","s"]}
+            >
+              <wui-text variant="paragraph-500" color="fg-200" data-testid="group-title"
+                >${t}</wui-text
+              >
+            </wui-flex>
+            <wui-flex flexDirection="column" gap="xs">
+              ${this.templateTransactions(e,o)}
+            </wui-flex>
+          </wui-flex>
+        `:null})})}templateRenderTransaction(t,e){let{date:i,descriptions:a,direction:o,isAllNFT:s,images:n,status:l,transfers:c,type:u}=this.getTransactionListItemProps(t),d=c?.length>1;return c?.length!==2||s?d?c.map((t,a)=>{let o=w.TransactionUtil.getTransferDescription(t),s=e&&a===c.length-1;return r.html` <wui-transaction-list-item
+          date=${i}
+          direction=${t.direction}
+          id=${s&&this.next?z:""}
+          status=${l}
+          type=${u}
+          .onlyDirectionIcon=${!0}
+          .images=${[n[a]]}
+          .descriptions=${[o]}
+        ></wui-transaction-list-item>`}):r.html`
+      <wui-transaction-list-item
+        date=${i}
+        .direction=${o}
+        id=${e&&this.next?z:""}
+        status=${l}
+        type=${u}
+        .images=${n}
+        .descriptions=${a}
+      ></wui-transaction-list-item>
+    `:r.html`
+        <wui-transaction-list-item
+          date=${i}
+          .direction=${o}
+          id=${e&&this.next?z:""}
+          status=${l}
+          type=${u}
+          .images=${n}
+          .descriptions=${a}
+        ></wui-transaction-list-item>
+      `}templateTransactions(t,e){return t.map((i,a)=>{let o=e&&a===t.length-1;return r.html`${this.templateRenderTransaction(i,o)}`})}emptyStateActivity(){return r.html`<wui-flex
+      class="emptyContainer"
+      flexGrow="1"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      .padding=${["3xl","xl","3xl","xl"]}
+      gap="xl"
+      data-testid="empty-activity-state"
+    >
+      <wui-icon-box
+        backgroundColor="gray-glass-005"
+        background="gray"
+        iconColor="fg-200"
+        icon="wallet"
+        size="lg"
+        ?border=${!0}
+        borderColor="wui-color-bg-125"
+      ></wui-icon-box>
+      <wui-flex flexDirection="column" alignItems="center" gap="xs">
+        <wui-text align="center" variant="paragraph-500" color="fg-100"
+          >No Transactions yet</wui-text
+        >
+        <wui-text align="center" variant="small-500" color="fg-200"
+          >Start trading on dApps <br />
+          to grow your wallet!</wui-text
+        >
+      </wui-flex>
+    </wui-flex>`}emptyStateAccount(){return r.html`<wui-flex
+      class="contentContainer"
+      alignItems="center"
+      justifyContent="center"
+      flexDirection="column"
+      gap="l"
+      data-testid="empty-account-state"
+    >
+      <wui-icon-box
+        icon="swapHorizontal"
+        size="inherit"
+        iconColor="fg-200"
+        backgroundColor="fg-200"
+        iconSize="lg"
+      ></wui-icon-box>
+      <wui-flex
+        class="textContent"
+        gap="xs"
+        flexDirection="column"
+        justifyContent="center"
+        flexDirection="column"
+      >
+        <wui-text variant="paragraph-500" align="center" color="fg-100">No activity yet</wui-text>
+        <wui-text variant="small-400" align="center" color="fg-200"
+          >Your next transactions will appear here</wui-text
+        >
+      </wui-flex>
+      <wui-link @click=${this.onReceiveClick.bind(this)}>Trade</wui-link>
+    </wui-flex>`}templateEmpty(){return"account"===this.page?r.html`${this.emptyStateAccount()}`:r.html`${this.emptyStateActivity()}`}templateLoading(){return"activity"===this.page?Array(7).fill(r.html` <wui-transaction-list-item-loader></wui-transaction-list-item-loader> `).map(t=>t):null}onReceiveClick(){h.RouterController.push("WalletReceive")}createPaginationObserver(){let t=c.ChainController.state.activeChain,{projectId:e}=p.OptionsController.state;this.paginationObserver=new IntersectionObserver(([i])=>{i?.isIntersecting&&!this.loading&&(v.TransactionsController.fetchTransactions(u.CoreHelperUtil.getPlainAddress(this.caipAddress)),d.EventsController.sendEvent({type:"track",event:"LOAD_MORE_TRANSACTIONS",properties:{address:u.CoreHelperUtil.getPlainAddress(this.caipAddress),projectId:e,cursor:this.next,isSmartAccount:l.AccountController.state.preferredAccountTypes?.[t]===S.W3mFrameRpcConstants.ACCOUNT_TYPES.SMART_ACCOUNT}}))},{}),this.setPaginationObserver()}setPaginationObserver(){this.paginationObserver?.disconnect();let t=this.shadowRoot?.querySelector(`#${z}`);t&&this.paginationObserver?.observe(t)}getTransactionListItemProps(t){let e=n.DateUtil.formatDate(t?.metadata?.minedAt),i=w.TransactionUtil.getTransactionDescriptions(t),a=t?.transfers,r=t?.transfers?.[0],o=!!r&&t?.transfers?.every(t=>!!t.nft_info),s=w.TransactionUtil.getTransactionImages(a);return{date:e,direction:r?.direction,descriptions:i,isAllNFT:o,images:s,status:t.metadata?.status,transfers:a,type:t.metadata?.operationType}}};E.styles=O,T([(0,o.property)()],E.prototype,"page",void 0),T([(0,s.state)()],E.prototype,"caipAddress",void 0),T([(0,s.state)()],E.prototype,"transactionsByYear",void 0),T([(0,s.state)()],E.prototype,"loading",void 0),T([(0,s.state)()],E.prototype,"empty",void 0),T([(0,s.state)()],E.prototype,"next",void 0),E=T([(0,g.customElement)("w3m-activity-list")],E),t.s([],917361)},382420,t=>{t.v(e=>Promise.all(["static/chunks/e1c9d8e496416281.js"].map(e=>t.l(e))).then(()=>e(757879)))},106628,t=>{t.v(e=>Promise.all(["static/chunks/0bed1f98717cad57.js"].map(e=>t.l(e))).then(()=>e(212369)))},694007,t=>{t.v(e=>Promise.all(["static/chunks/a08497e1e0ea67a3.js"].map(e=>t.l(e))).then(()=>e(243944)))},336054,t=>{t.v(e=>Promise.all(["static/chunks/419a14d0e86c6c3e.js"].map(e=>t.l(e))).then(()=>e(903178)))},54162,t=>{t.v(e=>Promise.all(["static/chunks/30b09f41ff511a4f.js"].map(e=>t.l(e))).then(()=>e(592591)))},398631,t=>{t.v(e=>Promise.all(["static/chunks/e83363b11bf7117d.js"].map(e=>t.l(e))).then(()=>e(397512)))},331451,t=>{t.v(e=>Promise.all(["static/chunks/99573ae8b5f16b49.js"].map(e=>t.l(e))).then(()=>e(247512)))},703318,t=>{t.v(e=>Promise.all(["static/chunks/359bd945e49439e7.js"].map(e=>t.l(e))).then(()=>e(931402)))},698455,t=>{t.v(e=>Promise.all(["static/chunks/f0e29ca9aaf4aa9d.js"].map(e=>t.l(e))).then(()=>e(72991)))},888934,t=>{t.v(e=>Promise.all(["static/chunks/6a23ae8259f1cae9.js"].map(e=>t.l(e))).then(()=>e(607740)))},915814,t=>{t.v(e=>Promise.all(["static/chunks/fe8eefd234412082.js"].map(e=>t.l(e))).then(()=>e(943403)))},178401,t=>{t.v(e=>Promise.all(["static/chunks/5f4a5175c0201472.js"].map(e=>t.l(e))).then(()=>e(899470)))},901612,t=>{t.v(e=>Promise.all(["static/chunks/dd0b4a53d9a0839a.js"].map(e=>t.l(e))).then(()=>e(286561)))},149048,t=>{t.v(e=>Promise.all(["static/chunks/476967d8e4c75117.js"].map(e=>t.l(e))).then(()=>e(132776)))},447850,t=>{t.v(e=>Promise.all(["static/chunks/90a4a31861172091.js"].map(e=>t.l(e))).then(()=>e(265535)))},128677,t=>{t.v(e=>Promise.all(["static/chunks/eccf7c6471dbdb6e.js"].map(e=>t.l(e))).then(()=>e(990458)))},387247,t=>{t.v(e=>Promise.all(["static/chunks/8f66c6099045b1be.js"].map(e=>t.l(e))).then(()=>e(135205)))},674937,t=>{t.v(e=>Promise.all(["static/chunks/60bf90a4a25fed7a.js"].map(e=>t.l(e))).then(()=>e(635655)))},10871,t=>{t.v(e=>Promise.all(["static/chunks/8f6407c71bccb3ac.js"].map(e=>t.l(e))).then(()=>e(905811)))},77869,t=>{t.v(e=>Promise.all(["static/chunks/dc2e0ec935e299d6.js"].map(e=>t.l(e))).then(()=>e(571400)))},877095,t=>{t.v(e=>Promise.all(["static/chunks/d58a7bbb94c301b7.js"].map(e=>t.l(e))).then(()=>e(649138)))},389663,t=>{t.v(e=>Promise.all(["static/chunks/dc8070d794a24973.js"].map(e=>t.l(e))).then(()=>e(897399)))},977893,t=>{t.v(e=>Promise.all(["static/chunks/ab4a087b5c06e0bf.js"].map(e=>t.l(e))).then(()=>e(298250)))},61751,t=>{t.v(e=>Promise.all(["static/chunks/e95dd22a8178abad.js"].map(e=>t.l(e))).then(()=>e(853568)))},465778,t=>{t.v(e=>Promise.all(["static/chunks/84ec45c256589f01.js"].map(e=>t.l(e))).then(()=>e(529682)))},580986,t=>{t.v(e=>Promise.all(["static/chunks/08d0af193acc4cf2.js"].map(e=>t.l(e))).then(()=>e(919274)))},445489,t=>{t.v(e=>Promise.all(["static/chunks/f834fbdfee1fb272.js"].map(e=>t.l(e))).then(()=>e(724830)))},644974,t=>{t.v(e=>Promise.all(["static/chunks/f94643ae376a8374.js"].map(e=>t.l(e))).then(()=>e(593869)))},349055,t=>{t.v(e=>Promise.all(["static/chunks/fccba941926c577d.js"].map(e=>t.l(e))).then(()=>e(431097)))},634296,t=>{t.v(e=>Promise.all(["static/chunks/f7c001cb81378309.js"].map(e=>t.l(e))).then(()=>e(420959)))},105603,t=>{t.v(e=>Promise.all(["static/chunks/e1780d7b7c90915d.js"].map(e=>t.l(e))).then(()=>e(821916)))},235827,t=>{t.v(e=>Promise.all(["static/chunks/2867665e4639b64c.js"].map(e=>t.l(e))).then(()=>e(280947)))},128185,t=>{t.v(e=>Promise.all(["static/chunks/6215a1cf1ad67ec3.js"].map(e=>t.l(e))).then(()=>e(716229)))},503940,t=>{t.v(e=>Promise.all(["static/chunks/9c5523382d67ef81.js"].map(e=>t.l(e))).then(()=>e(411166)))},475557,t=>{t.v(e=>Promise.all(["static/chunks/7563cdecdb26f87a.js"].map(e=>t.l(e))).then(()=>e(144762)))},436504,t=>{t.v(e=>Promise.all(["static/chunks/a5982f7b7a2cefeb.js"].map(e=>t.l(e))).then(()=>e(135994)))},730105,t=>{t.v(e=>Promise.all(["static/chunks/42ed5cbbc08def07.js"].map(e=>t.l(e))).then(()=>e(697049)))},260829,t=>{t.v(e=>Promise.all(["static/chunks/c0d0ea65cba10755.js"].map(e=>t.l(e))).then(()=>e(334604)))},260637,t=>{t.v(e=>Promise.all(["static/chunks/7ba854781aa11d3b.js"].map(e=>t.l(e))).then(()=>e(577318)))},814914,t=>{t.v(e=>Promise.all(["static/chunks/b3bbd6b2fa5f34ab.js"].map(e=>t.l(e))).then(()=>e(25454)))},971281,t=>{t.v(e=>Promise.all(["static/chunks/bdab184b582f1dcd.js"].map(e=>t.l(e))).then(()=>e(977684)))},677848,t=>{t.v(e=>Promise.all(["static/chunks/cd979ef00057c229.js"].map(e=>t.l(e))).then(()=>e(718695)))},326626,t=>{t.v(e=>Promise.all(["static/chunks/f3879cb6880d80cb.js"].map(e=>t.l(e))).then(()=>e(974300)))},80543,t=>{t.v(e=>Promise.all(["static/chunks/cd9db3be3b656bef.js"].map(e=>t.l(e))).then(()=>e(204379)))},966562,t=>{t.v(e=>Promise.all(["static/chunks/815e74a2c7178dc0.js"].map(e=>t.l(e))).then(()=>e(555747)))},674561,t=>{t.v(e=>Promise.all(["static/chunks/8fccea2433af52c9.js"].map(e=>t.l(e))).then(()=>e(485447)))},690738,t=>{t.v(e=>Promise.all(["static/chunks/9713a0eaa6ec0f60.js"].map(e=>t.l(e))).then(()=>e(903828)))},135910,t=>{t.v(e=>Promise.all(["static/chunks/40b1187e455656dd.js"].map(e=>t.l(e))).then(()=>e(590530)))},398708,t=>{t.v(e=>Promise.all(["static/chunks/78f608c5af0f395b.js"].map(e=>t.l(e))).then(()=>e(934387)))},754882,t=>{t.v(e=>Promise.all(["static/chunks/7769f3187f80deec.js"].map(e=>t.l(e))).then(()=>e(506750)))},17823,t=>{t.v(e=>Promise.all(["static/chunks/dbccccb621365c3c.js"].map(e=>t.l(e))).then(()=>e(113688)))},709963,t=>{t.v(e=>Promise.all(["static/chunks/3720dd9798593c33.js"].map(e=>t.l(e))).then(()=>e(179487)))},780745,t=>{t.v(e=>Promise.all(["static/chunks/8d5d72ef2db3650d.js"].map(e=>t.l(e))).then(()=>e(945152)))},886878,t=>{t.v(e=>Promise.all(["static/chunks/e2c67140d4b4a2a2.js"].map(e=>t.l(e))).then(()=>e(63956)))},629947,t=>{t.v(e=>Promise.all(["static/chunks/24ae376932af6fb2.js"].map(e=>t.l(e))).then(()=>e(265958)))},725035,t=>{t.v(e=>Promise.all(["static/chunks/bbac9e6cbb5d68ce.js"].map(e=>t.l(e))).then(()=>e(512304)))},267118,t=>{t.v(e=>Promise.all(["static/chunks/8164b71833c4e9d7.js"].map(e=>t.l(e))).then(()=>e(997907)))},992469,t=>{t.v(e=>Promise.all(["static/chunks/3c6ec6f421d61958.js"].map(e=>t.l(e))).then(()=>e(96693)))},299242,t=>{t.v(e=>Promise.all(["static/chunks/ac22d989b6494c97.js"].map(e=>t.l(e))).then(()=>e(852355)))},437078,t=>{t.v(e=>Promise.all(["static/chunks/bf6a21efb5e89e14.js"].map(e=>t.l(e))).then(()=>e(521242)))},433072,t=>{t.v(e=>Promise.all(["static/chunks/37ef0ca9feb4de23.js"].map(e=>t.l(e))).then(()=>e(389762)))},54809,t=>{t.v(e=>Promise.all(["static/chunks/e39fc3c77ce6a413.js"].map(e=>t.l(e))).then(()=>e(634056)))},823801,t=>{t.v(e=>Promise.all(["static/chunks/897b6b9c6c37947c.js"].map(e=>t.l(e))).then(()=>e(730999)))},80341,t=>{t.v(e=>Promise.all(["static/chunks/ac935e03e4b1ef93.js"].map(e=>t.l(e))).then(()=>e(680722)))},379889,t=>{t.v(e=>Promise.all(["static/chunks/2dc7018223b3699c.js"].map(e=>t.l(e))).then(()=>e(594321)))},694678,t=>{t.v(e=>Promise.all(["static/chunks/da263508f3ebfb54.js"].map(e=>t.l(e))).then(()=>e(315715)))},449358,t=>{t.v(e=>Promise.all(["static/chunks/560d1381d891deac.js"].map(e=>t.l(e))).then(()=>e(988679)))},638427,t=>{t.v(e=>Promise.all(["static/chunks/d518194c5933527b.js"].map(e=>t.l(e))).then(()=>e(449589)))},41733,t=>{t.v(e=>Promise.all(["static/chunks/af482c11b888db5c.js"].map(e=>t.l(e))).then(()=>e(199281)))},389205,t=>{t.v(e=>Promise.all(["static/chunks/9fb8aaa813ca695a.js"].map(e=>t.l(e))).then(()=>e(740567)))},812419,t=>{t.v(e=>Promise.all(["static/chunks/a28bf95ae667069f.js"].map(e=>t.l(e))).then(()=>e(546239)))},577939,t=>{t.v(e=>Promise.all(["static/chunks/ecabcb86c8183525.js"].map(e=>t.l(e))).then(()=>e(538162)))},69170,t=>{t.v(e=>Promise.all(["static/chunks/e291b3952ca32b34.js"].map(e=>t.l(e))).then(()=>e(139075)))},685793,t=>{t.v(e=>Promise.all(["static/chunks/b6245f74c269b245.js"].map(e=>t.l(e))).then(()=>e(341227)))}]);

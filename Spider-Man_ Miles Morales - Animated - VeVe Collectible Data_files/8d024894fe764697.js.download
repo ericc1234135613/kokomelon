@@ -1,0 +1,258 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,822116,e=>{"use strict";e.i(611581),e.s([])},727620,e=>{"use strict";e.i(24727);var t=e.i(453404),i=e.i(841066);e.i(428531);var a=e.i(88083);e.i(372412);var r=e.i(229199);e.i(733610);var l=e.i(844696),n=e.i(669883);e.i(542526);var o=e.i(527065);let s=o.css`
+  :host {
+    position: relative;
+    display: inline-block;
+  }
+
+  wui-text {
+    margin: var(--wui-spacing-xxs) var(--wui-spacing-m) var(--wui-spacing-0) var(--wui-spacing-m);
+  }
+`;var c=function(e,t,i,a){var r,l=arguments.length,n=l<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,i,a);else for(var o=e.length-1;o>=0;o--)(r=e[o])&&(n=(l<3?r(n):l>3?r(t,i,n):r(t,i))||n);return l>3&&n&&Object.defineProperty(t,i,n),n};let u=class extends t.LitElement{constructor(){super(...arguments),this.disabled=!1}render(){return i.html`
+      <wui-input-text
+        type="email"
+        placeholder="Email"
+        icon="mail"
+        size="mdl"
+        .disabled=${this.disabled}
+        .value=${this.value}
+        data-testid="wui-email-input"
+        tabIdx=${(0,r.ifDefined)(this.tabIdx)}
+      ></wui-input-text>
+      ${this.templateError()}
+    `}templateError(){return this.errorMessage?i.html`<wui-text variant="tiny-500" color="error-100">${this.errorMessage}</wui-text>`:null}};u.styles=[l.resetStyles,s],c([(0,a.property)()],u.prototype,"errorMessage",void 0),c([(0,a.property)({type:Boolean})],u.prototype,"disabled",void 0),c([(0,a.property)()],u.prototype,"value",void 0),c([(0,a.property)()],u.prototype,"tabIdx",void 0),u=c([(0,n.customElement)("wui-email-input")],u),e.s([],727620)},959177,e=>{"use strict";var t=e.i(216503),i=e.i(11223),a=e.i(674283),r=e.i(556064),l=e.i(732246),n=e.i(478117);e.i(824984);var o=e.i(669883);e.i(24727);var s=e.i(453404),c=e.i(841066);e.i(428531);var u=e.i(666033),h=e.i(762588),p=e.i(566582),m=e.i(812372);e.i(681166),e.i(752087),e.i(822116);var d=s,f=e.i(88083);e.i(111231);var v=e.i(844696),w=e.i(28731),b=s,g=e.i(527065);let E=g.css`
+  :host {
+    position: relative;
+    display: inline-block;
+  }
+
+  input {
+    width: 50px;
+    height: 50px;
+    background: var(--wui-color-gray-glass-010);
+    border-radius: var(--wui-border-radius-xs);
+    border: 1px solid var(--wui-color-gray-glass-005);
+    font-family: var(--wui-font-family);
+    font-size: var(--wui-font-size-large);
+    font-weight: var(--wui-font-weight-regular);
+    letter-spacing: var(--wui-letter-spacing-large);
+    text-align: center;
+    color: var(--wui-color-fg-100);
+    caret-color: var(--wui-color-accent-100);
+    transition:
+      background-color var(--wui-ease-inout-power-1) var(--wui-duration-md),
+      border-color var(--wui-ease-inout-power-1) var(--wui-duration-md),
+      box-shadow var(--wui-ease-inout-power-1) var(--wui-duration-md);
+    will-change: background-color, border-color, box-shadow;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    padding: 0px;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  input:disabled {
+    cursor: not-allowed;
+    border: 1px solid var(--wui-color-gray-glass-010);
+    background: var(--wui-color-gray-glass-005);
+  }
+
+  input:focus:enabled {
+    background-color: var(--wui-color-gray-glass-015);
+    border: 1px solid var(--wui-color-accent-100);
+    -webkit-box-shadow: 0px 0px 0px 4px var(--wui-box-shadow-blue);
+    -moz-box-shadow: 0px 0px 0px 4px var(--wui-box-shadow-blue);
+    box-shadow: 0px 0px 0px 4px var(--wui-box-shadow-blue);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    input:hover:enabled {
+      background-color: var(--wui-color-gray-glass-015);
+    }
+  }
+`;var y=function(e,t,i,a){var r,l=arguments.length,n=l<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,i,a);else for(var o=e.length-1;o>=0;o--)(r=e[o])&&(n=(l<3?r(n):l>3?r(t,i,n):r(t,i))||n);return l>3&&n&&Object.defineProperty(t,i,n),n};let C=class extends b.LitElement{constructor(){super(...arguments),this.disabled=!1,this.value=""}render(){return c.html`<input
+      type="number"
+      maxlength="1"
+      inputmode="numeric"
+      autofocus
+      ?disabled=${this.disabled}
+      value=${this.value}
+    /> `}};C.styles=[v.resetStyles,v.elementStyles,E],y([(0,f.property)({type:Boolean})],C.prototype,"disabled",void 0),y([(0,f.property)({type:String})],C.prototype,"value",void 0),C=y([(0,o.customElement)("wui-input-numeric")],C);let x=g.css`
+  :host {
+    position: relative;
+    display: block;
+  }
+`;var k=function(e,t,i,a){var r,l=arguments.length,n=l<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,i,a);else for(var o=e.length-1;o>=0;o--)(r=e[o])&&(n=(l<3?r(n):l>3?r(t,i,n):r(t,i))||n);return l>3&&n&&Object.defineProperty(t,i,n),n};let P=class extends d.LitElement{constructor(){super(...arguments),this.length=6,this.otp="",this.values=Array.from({length:this.length}).map(()=>""),this.numerics=[],this.shouldInputBeEnabled=e=>this.values.slice(0,e).every(e=>""!==e),this.handleKeyDown=(e,t)=>{let i=e.target,a=this.getInputElement(i);if(!a)return;["ArrowLeft","ArrowRight","Shift","Delete"].includes(e.key)&&e.preventDefault();let r=a.selectionStart;switch(e.key){case"ArrowLeft":r&&a.setSelectionRange(r+1,r+1),this.focusInputField("prev",t);break;case"ArrowRight":case"Shift":this.focusInputField("next",t);break;case"Delete":case"Backspace":""===a.value?this.focusInputField("prev",t):this.updateInput(a,t,"")}},this.focusInputField=(e,t)=>{if("next"===e){let e=t+1;if(!this.shouldInputBeEnabled(e))return;let i=this.numerics[e<this.length?e:t],a=i?this.getInputElement(i):void 0;a&&(a.disabled=!1,a.focus())}if("prev"===e){let e=t-1,i=this.numerics[e>-1?e:t],a=i?this.getInputElement(i):void 0;a&&a.focus()}}}firstUpdated(){this.otp&&(this.values=this.otp.split(""));let e=this.shadowRoot?.querySelectorAll("wui-input-numeric");e&&(this.numerics=Array.from(e)),this.numerics[0]?.focus()}render(){return c.html`
+      <wui-flex gap="xxs" data-testid="wui-otp-input">
+        ${Array.from({length:this.length}).map((e,t)=>c.html`
+            <wui-input-numeric
+              @input=${e=>this.handleInput(e,t)}
+              @click=${e=>this.selectInput(e)}
+              @keydown=${e=>this.handleKeyDown(e,t)}
+              .disabled=${!this.shouldInputBeEnabled(t)}
+              .value=${this.values[t]||""}
+            >
+            </wui-input-numeric>
+          `)}
+      </wui-flex>
+    `}updateInput(e,t,i){let a=this.numerics[t],r=e||(a?this.getInputElement(a):void 0);r&&(r.value=i,this.values=this.values.map((e,a)=>a===t?i:e))}selectInput(e){let t=e.target;if(t){let e=this.getInputElement(t);e?.select()}}handleInput(e,t){let i=e.target,a=this.getInputElement(i);if(a){let i=a.value;"insertFromPaste"===e.inputType?this.handlePaste(a,i,t):w.UiHelperUtil.isNumber(i)&&e.data?(this.updateInput(a,t,e.data),this.focusInputField("next",t)):this.updateInput(a,t,"")}this.dispatchInputChangeEvent()}handlePaste(e,t,i){let a=t[0];if(a&&w.UiHelperUtil.isNumber(a)){this.updateInput(e,i,a);let r=t.substring(1);if(i+1<this.length&&r.length){let e=this.numerics[i+1],t=e?this.getInputElement(e):void 0;t&&this.handlePaste(t,r,i+1)}else this.focusInputField("next",i)}else this.updateInput(e,i,"")}getInputElement(e){return e.shadowRoot?.querySelector("input")?e.shadowRoot.querySelector("input"):null}dispatchInputChangeEvent(){let e=this.values.join("");this.dispatchEvent(new CustomEvent("inputChange",{detail:e,bubbles:!0,composed:!0}))}};P.styles=[v.resetStyles,x],k([(0,f.property)({type:Number})],P.prototype,"length",void 0),k([(0,f.property)({type:String})],P.prototype,"otp",void 0),k([(0,u.state)()],P.prototype,"values",void 0),P=k([(0,o.customElement)("wui-otp")],P),e.i(745276);var j=e.i(683999);let O=g.css`
+  wui-loading-spinner {
+    margin: 9px auto;
+  }
+
+  .email-display,
+  .email-display wui-text {
+    max-width: 100%;
+  }
+`;var I=function(e,t,i,a){var r,l=arguments.length,n=l<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,i,a);else for(var o=e.length-1;o>=0;o--)(r=e[o])&&(n=(l<3?r(n):l>3?r(t,i,n):r(t,i))||n);return l>3&&n&&Object.defineProperty(t,i,n),n};let R=class extends s.LitElement{firstUpdated(){this.startOTPTimeout()}disconnectedCallback(){clearTimeout(this.OTPTimeout)}constructor(){super(),this.loading=!1,this.timeoutTimeLeft=j.W3mFrameHelpers.getTimeToNextEmailLogin(),this.error="",this.otp="",this.email=p.RouterController.state.data?.email,this.authConnector=h.ConnectorController.getAuthConnector()}render(){if(!this.email)throw Error("w3m-email-otp-widget: No email provided");let e=!!this.timeoutTimeLeft,t=this.getFooterLabels(e);return c.html`
+      <wui-flex
+        flexDirection="column"
+        alignItems="center"
+        .padding=${["l","0","l","0"]}
+        gap="l"
+      >
+        <wui-flex
+          class="email-display"
+          flexDirection="column"
+          alignItems="center"
+          .padding=${["0","xl","0","xl"]}
+        >
+          <wui-text variant="paragraph-400" color="fg-100" align="center">
+            Enter the code we sent to
+          </wui-text>
+          <wui-text variant="paragraph-500" color="fg-100" lineClamp="1" align="center">
+            ${this.email}
+          </wui-text>
+        </wui-flex>
+
+        <wui-text variant="small-400" color="fg-200">The code expires in 20 minutes</wui-text>
+
+        ${this.loading?c.html`<wui-loading-spinner size="xl" color="accent-100"></wui-loading-spinner>`:c.html` <wui-flex flexDirection="column" alignItems="center" gap="xs">
+              <wui-otp
+                dissabled
+                length="6"
+                @inputChange=${this.onOtpInputChange.bind(this)}
+                .otp=${this.otp}
+              ></wui-otp>
+              ${this.error?c.html`
+                    <wui-text variant="small-400" align="center" color="error-100">
+                      ${this.error}. Try Again
+                    </wui-text>
+                  `:null}
+            </wui-flex>`}
+
+        <wui-flex alignItems="center" gap="xs">
+          <wui-text variant="small-400" color="fg-200">${t.title}</wui-text>
+          <wui-link @click=${this.onResendCode.bind(this)} .disabled=${e}>
+            ${t.action}
+          </wui-link>
+        </wui-flex>
+      </wui-flex>
+    `}startOTPTimeout(){this.timeoutTimeLeft=j.W3mFrameHelpers.getTimeToNextEmailLogin(),this.OTPTimeout=setInterval(()=>{this.timeoutTimeLeft>0?this.timeoutTimeLeft=j.W3mFrameHelpers.getTimeToNextEmailLogin():clearInterval(this.OTPTimeout)},1e3)}async onOtpInputChange(e){try{!this.loading&&(this.otp=e.detail,this.authConnector&&6===this.otp.length&&(this.loading=!0,await this.onOtpSubmit?.(this.otp)))}catch(e){this.error=a.CoreHelperUtil.parseError(e),this.loading=!1}}async onResendCode(){try{if(this.onOtpResend){if(!this.loading&&!this.timeoutTimeLeft){if(this.error="",this.otp="",!h.ConnectorController.getAuthConnector()||!this.email)throw Error("w3m-email-otp-widget: Unable to resend email");this.loading=!0,await this.onOtpResend(this.email),this.startOTPTimeout(),m.SnackController.showSuccess("Code email resent")}}else this.onStartOver&&this.onStartOver()}catch(e){m.SnackController.showError(e)}finally{this.loading=!1}}getFooterLabels(e){return this.onStartOver?{title:"Something wrong?",action:`Try again ${e?`in ${this.timeoutTimeLeft}s`:""}`}:{title:"Didn't receive it?",action:`Resend ${e?`in ${this.timeoutTimeLeft}s`:"Code"}`}}};R.styles=O,I([(0,u.state)()],R.prototype,"loading",void 0),I([(0,u.state)()],R.prototype,"timeoutTimeLeft",void 0),I([(0,u.state)()],R.prototype,"error",void 0),R=I([(0,o.customElement)("w3m-email-otp-widget")],R);let T=class extends R{constructor(){super(...arguments),this.onOtpSubmit=async e=>{try{if(this.authConnector){if(await this.authConnector.provider.connectOtp({otp:e}),r.EventsController.sendEvent({type:"track",event:"EMAIL_VERIFICATION_CODE_PASS"}),t.ChainController.state.activeChain)await i.ConnectionController.connectExternal(this.authConnector,t.ChainController.state.activeChain);else throw Error("Active chain is not set on ChainControll");r.EventsController.sendEvent({type:"track",event:"CONNECT_SUCCESS",properties:{method:"email",name:this.authConnector.name||"Unknown"}}),n.OptionsController.state.siwx||l.ModalController.close()}}catch(e){throw r.EventsController.sendEvent({type:"track",event:"EMAIL_VERIFICATION_CODE_FAIL",properties:{message:a.CoreHelperUtil.parseError(e)}}),e}},this.onOtpResend=async e=>{this.authConnector&&(await this.authConnector.provider.connectEmail({email:e}),r.EventsController.sendEvent({type:"track",event:"EMAIL_VERIFICATION_CODE_SENT"}))}}};T=function(e,t,i,a){var r,l=arguments.length,n=l<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,i,a);else for(var o=e.length-1;o>=0;o--)(r=e[o])&&(n=(l<3?r(n):l>3?r(t,i,n):r(t,i))||n);return l>3&&n&&Object.defineProperty(t,i,n),n}([(0,o.customElement)("w3m-email-verify-otp-view")],T),e.s(["W3mEmailVerifyOtpView",()=>T],599966);var S=s;e.i(794566);let A=g.css`
+  wui-icon-box {
+    height: var(--wui-icon-box-size-xl);
+    width: var(--wui-icon-box-size-xl);
+  }
+`;var $=function(e,t,i,a){var r,l=arguments.length,n=l<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,i,a);else for(var o=e.length-1;o>=0;o--)(r=e[o])&&(n=(l<3?r(n):l>3?r(t,i,n):r(t,i))||n);return l>3&&n&&Object.defineProperty(t,i,n),n};let D=class extends S.LitElement{constructor(){super(),this.email=p.RouterController.state.data?.email,this.authConnector=h.ConnectorController.getAuthConnector(),this.loading=!1,this.listenForDeviceApproval()}render(){if(!this.email)throw Error("w3m-email-verify-device-view: No email provided");if(!this.authConnector)throw Error("w3m-email-verify-device-view: No auth connector provided");return c.html`
+      <wui-flex
+        flexDirection="column"
+        alignItems="center"
+        .padding=${["xxl","s","xxl","s"]}
+        gap="l"
+      >
+        <wui-icon-box
+          size="xl"
+          iconcolor="accent-100"
+          backgroundcolor="accent-100"
+          icon="verify"
+          background="opaque"
+        ></wui-icon-box>
+
+        <wui-flex flexDirection="column" alignItems="center" gap="s">
+          <wui-flex flexDirection="column" alignItems="center">
+            <wui-text variant="paragraph-400" color="fg-100">
+              Approve the login link we sent to
+            </wui-text>
+            <wui-text variant="paragraph-400" color="fg-100"><b>${this.email}</b></wui-text>
+          </wui-flex>
+
+          <wui-text variant="small-400" color="fg-200" align="center">
+            The code expires in 20 minutes
+          </wui-text>
+
+          <wui-flex alignItems="center" id="w3m-resend-section" gap="xs">
+            <wui-text variant="small-400" color="fg-100" align="center">
+              Didn't receive it?
+            </wui-text>
+            <wui-link @click=${this.onResendCode.bind(this)} .disabled=${this.loading}>
+              Resend email
+            </wui-link>
+          </wui-flex>
+        </wui-flex>
+      </wui-flex>
+    `}async listenForDeviceApproval(){if(this.authConnector)try{await this.authConnector.provider.connectDevice(),r.EventsController.sendEvent({type:"track",event:"DEVICE_REGISTERED_FOR_EMAIL"}),r.EventsController.sendEvent({type:"track",event:"EMAIL_VERIFICATION_CODE_SENT"}),p.RouterController.replace("EmailVerifyOtp",{email:this.email})}catch(e){p.RouterController.goBack()}}async onResendCode(){try{if(!this.loading){if(!this.authConnector||!this.email)throw Error("w3m-email-login-widget: Unable to resend email");this.loading=!0,await this.authConnector.provider.connectEmail({email:this.email}),this.listenForDeviceApproval(),m.SnackController.showSuccess("Code email resent")}}catch(e){m.SnackController.showError(e)}finally{this.loading=!1}}};D.styles=A,$([(0,u.state)()],D.prototype,"loading",void 0),D=$([(0,o.customElement)("w3m-email-verify-device-view")],D),e.s(["W3mEmailVerifyDeviceView",()=>D],510640);var L=s;e.i(818731);var V=e.i(49976);e.i(513455),e.i(727620);let _=g.css`
+  wui-email-input {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+`;var U=function(e,t,i,a){var r,l=arguments.length,n=l<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,i,a);else for(var o=e.length-1;o>=0;o--)(r=e[o])&&(n=(l<3?r(n):l>3?r(t,i,n):r(t,i))||n);return l>3&&n&&Object.defineProperty(t,i,n),n};let F=class extends L.LitElement{constructor(){super(...arguments),this.formRef=(0,V.createRef)(),this.initialEmail=p.RouterController.state.data?.email??"",this.redirectView=p.RouterController.state.data?.redirectView,this.email="",this.loading=!1}firstUpdated(){this.formRef.value?.addEventListener("keydown",e=>{"Enter"===e.key&&this.onSubmitEmail(e)})}render(){return c.html`
+      <wui-flex flexDirection="column" padding="m" gap="m">
+        <form ${(0,V.ref)(this.formRef)} @submit=${this.onSubmitEmail.bind(this)}>
+          <wui-email-input
+            value=${this.initialEmail}
+            .disabled=${this.loading}
+            @inputChange=${this.onEmailInputChange.bind(this)}
+          >
+          </wui-email-input>
+          <input type="submit" hidden />
+        </form>
+        ${this.buttonsTemplate()}
+      </wui-flex>
+    `}onEmailInputChange(e){this.email=e.detail}async onSubmitEmail(e){try{if(this.loading)return;this.loading=!0,e.preventDefault();let t=h.ConnectorController.getAuthConnector();if(!t)throw Error("w3m-update-email-wallet: Auth connector not found");let i=await t.provider.updateEmail({email:this.email});r.EventsController.sendEvent({type:"track",event:"EMAIL_EDIT"}),"VERIFY_SECONDARY_OTP"===i.action?p.RouterController.push("UpdateEmailSecondaryOtp",{email:this.initialEmail,newEmail:this.email,redirectView:this.redirectView}):p.RouterController.push("UpdateEmailPrimaryOtp",{email:this.initialEmail,newEmail:this.email,redirectView:this.redirectView})}catch(e){m.SnackController.showError(e),this.loading=!1}}buttonsTemplate(){let e=!this.loading&&this.email.length>3&&this.email!==this.initialEmail;return this.redirectView?c.html`
+      <wui-flex gap="s">
+        <wui-button size="md" variant="neutral" fullWidth @click=${p.RouterController.goBack}>
+          Cancel
+        </wui-button>
+
+        <wui-button
+          size="md"
+          variant="main"
+          fullWidth
+          @click=${this.onSubmitEmail.bind(this)}
+          .disabled=${!e}
+          .loading=${this.loading}
+        >
+          Save
+        </wui-button>
+      </wui-flex>
+    `:c.html`
+        <wui-button
+          size="md"
+          variant="main"
+          fullWidth
+          @click=${this.onSubmitEmail.bind(this)}
+          .disabled=${!e}
+          .loading=${this.loading}
+        >
+          Save
+        </wui-button>
+      `}};F.styles=_,U([(0,u.state)()],F.prototype,"email",void 0),U([(0,u.state)()],F.prototype,"loading",void 0),F=U([(0,o.customElement)("w3m-update-email-wallet-view")],F),e.s(["W3mUpdateEmailWalletView",()=>F],332664);let N=class extends R{constructor(){super(),this.email=p.RouterController.state.data?.email,this.onOtpSubmit=async e=>{try{this.authConnector&&(await this.authConnector.provider.updateEmailPrimaryOtp({otp:e}),r.EventsController.sendEvent({type:"track",event:"EMAIL_VERIFICATION_CODE_PASS"}),p.RouterController.replace("UpdateEmailSecondaryOtp",p.RouterController.state.data))}catch(e){throw r.EventsController.sendEvent({type:"track",event:"EMAIL_VERIFICATION_CODE_FAIL",properties:{message:a.CoreHelperUtil.parseError(e)}}),e}},this.onStartOver=()=>{p.RouterController.replace("UpdateEmailWallet",p.RouterController.state.data)}}};N=function(e,t,i,a){var r,l=arguments.length,n=l<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,i,a);else for(var o=e.length-1;o>=0;o--)(r=e[o])&&(n=(l<3?r(n):l>3?r(t,i,n):r(t,i))||n);return l>3&&n&&Object.defineProperty(t,i,n),n}([(0,o.customElement)("w3m-update-email-primary-otp-view")],N),e.s(["W3mUpdateEmailPrimaryOtpView",()=>N],655276);let W=class extends R{constructor(){super(),this.email=p.RouterController.state.data?.newEmail,this.redirectView=p.RouterController.state.data?.redirectView,this.onOtpSubmit=async e=>{try{this.authConnector&&(await this.authConnector.provider.updateEmailSecondaryOtp({otp:e}),r.EventsController.sendEvent({type:"track",event:"EMAIL_VERIFICATION_CODE_PASS"}),this.redirectView&&p.RouterController.reset(this.redirectView))}catch(e){throw r.EventsController.sendEvent({type:"track",event:"EMAIL_VERIFICATION_CODE_FAIL",properties:{message:a.CoreHelperUtil.parseError(e)}}),e}},this.onStartOver=()=>{p.RouterController.replace("UpdateEmailWallet",p.RouterController.state.data)}}};W=function(e,t,i,a){var r,l=arguments.length,n=l<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,i,a);else for(var o=e.length-1;o>=0;o--)(r=e[o])&&(n=(l<3?r(n):l>3?r(t,i,n):r(t,i))||n);return l>3&&n&&Object.defineProperty(t,i,n),n}([(0,o.customElement)("w3m-update-email-secondary-otp-view")],W),e.s(["W3mUpdateEmailSecondaryOtpView",()=>W],571895);var z=s,M=e.i(246999),H=e.i(665602),B=function(e,t,i,a){var r,l=arguments.length,n=l<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,i):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,i,a);else for(var o=e.length-1;o>=0;o--)(r=e[o])&&(n=(l<3?r(n):l>3?r(t,i,n):r(t,i))||n);return l>3&&n&&Object.defineProperty(t,i,n),n};let K=class extends z.LitElement{constructor(){super(),this.authConnector=h.ConnectorController.getAuthConnector(),this.isEmailEnabled=n.OptionsController.state.features?.email,this.isAuthEnabled=this.checkIfAuthEnabled(h.ConnectorController.state.connectors),this.connectors=h.ConnectorController.state.connectors,h.ConnectorController.subscribeKey("connectors",e=>{this.connectors=e,this.isAuthEnabled=this.checkIfAuthEnabled(this.connectors)})}render(){if(!this.isEmailEnabled)throw Error("w3m-email-login-view: Email is not enabled");if(!this.isAuthEnabled)throw Error("w3m-email-login-view: No auth connector provided");return c.html`<wui-flex
+      flexDirection="column"
+      .padding=${["3xs","m","m","m"]}
+      gap="l"
+    >
+      <w3m-email-login-widget></w3m-email-login-widget>
+    </wui-flex> `}checkIfAuthEnabled(e){let t=e.filter(e=>e.type===H.ConstantsUtil.CONNECTOR_TYPE_AUTH).map(e=>e.chain);return M.ConstantsUtil.AUTH_CONNECTOR_SUPPORTED_CHAINS.some(e=>t.includes(e))}};B([(0,u.state)()],K.prototype,"connectors",void 0),K=B([(0,o.customElement)("w3m-email-login-view")],K),e.s(["W3mEmailLoginView",()=>K],845865),e.s([],841146),e.i(841146),e.i(599966),e.i(510640),e.i(332664),e.i(655276),e.i(571895),e.i(845865),e.s(["W3mEmailLoginView",()=>K,"W3mEmailVerifyDeviceView",()=>D,"W3mEmailVerifyOtpView",()=>T,"W3mUpdateEmailPrimaryOtpView",()=>N,"W3mUpdateEmailSecondaryOtpView",()=>W,"W3mUpdateEmailWalletView",()=>F],959177)},382420,e=>{e.v(t=>Promise.all(["static/chunks/e1c9d8e496416281.js"].map(t=>e.l(t))).then(()=>t(757879)))},106628,e=>{e.v(t=>Promise.all(["static/chunks/0bed1f98717cad57.js"].map(t=>e.l(t))).then(()=>t(212369)))},694007,e=>{e.v(t=>Promise.all(["static/chunks/a08497e1e0ea67a3.js"].map(t=>e.l(t))).then(()=>t(243944)))},336054,e=>{e.v(t=>Promise.all(["static/chunks/419a14d0e86c6c3e.js"].map(t=>e.l(t))).then(()=>t(903178)))},54162,e=>{e.v(t=>Promise.all(["static/chunks/30b09f41ff511a4f.js"].map(t=>e.l(t))).then(()=>t(592591)))},398631,e=>{e.v(t=>Promise.all(["static/chunks/e83363b11bf7117d.js"].map(t=>e.l(t))).then(()=>t(397512)))},331451,e=>{e.v(t=>Promise.all(["static/chunks/99573ae8b5f16b49.js"].map(t=>e.l(t))).then(()=>t(247512)))},703318,e=>{e.v(t=>Promise.all(["static/chunks/359bd945e49439e7.js"].map(t=>e.l(t))).then(()=>t(931402)))},698455,e=>{e.v(t=>Promise.all(["static/chunks/f0e29ca9aaf4aa9d.js"].map(t=>e.l(t))).then(()=>t(72991)))},888934,e=>{e.v(t=>Promise.all(["static/chunks/6a23ae8259f1cae9.js"].map(t=>e.l(t))).then(()=>t(607740)))},915814,e=>{e.v(t=>Promise.all(["static/chunks/fe8eefd234412082.js"].map(t=>e.l(t))).then(()=>t(943403)))},178401,e=>{e.v(t=>Promise.all(["static/chunks/5f4a5175c0201472.js"].map(t=>e.l(t))).then(()=>t(899470)))},901612,e=>{e.v(t=>Promise.all(["static/chunks/dd0b4a53d9a0839a.js"].map(t=>e.l(t))).then(()=>t(286561)))},149048,e=>{e.v(t=>Promise.all(["static/chunks/476967d8e4c75117.js"].map(t=>e.l(t))).then(()=>t(132776)))},447850,e=>{e.v(t=>Promise.all(["static/chunks/90a4a31861172091.js"].map(t=>e.l(t))).then(()=>t(265535)))},128677,e=>{e.v(t=>Promise.all(["static/chunks/eccf7c6471dbdb6e.js"].map(t=>e.l(t))).then(()=>t(990458)))},387247,e=>{e.v(t=>Promise.all(["static/chunks/8f66c6099045b1be.js"].map(t=>e.l(t))).then(()=>t(135205)))},674937,e=>{e.v(t=>Promise.all(["static/chunks/60bf90a4a25fed7a.js"].map(t=>e.l(t))).then(()=>t(635655)))},10871,e=>{e.v(t=>Promise.all(["static/chunks/8f6407c71bccb3ac.js"].map(t=>e.l(t))).then(()=>t(905811)))},77869,e=>{e.v(t=>Promise.all(["static/chunks/dc2e0ec935e299d6.js"].map(t=>e.l(t))).then(()=>t(571400)))},877095,e=>{e.v(t=>Promise.all(["static/chunks/d58a7bbb94c301b7.js"].map(t=>e.l(t))).then(()=>t(649138)))},389663,e=>{e.v(t=>Promise.all(["static/chunks/dc8070d794a24973.js"].map(t=>e.l(t))).then(()=>t(897399)))},977893,e=>{e.v(t=>Promise.all(["static/chunks/ab4a087b5c06e0bf.js"].map(t=>e.l(t))).then(()=>t(298250)))},61751,e=>{e.v(t=>Promise.all(["static/chunks/e95dd22a8178abad.js"].map(t=>e.l(t))).then(()=>t(853568)))},465778,e=>{e.v(t=>Promise.all(["static/chunks/84ec45c256589f01.js"].map(t=>e.l(t))).then(()=>t(529682)))},580986,e=>{e.v(t=>Promise.all(["static/chunks/08d0af193acc4cf2.js"].map(t=>e.l(t))).then(()=>t(919274)))},445489,e=>{e.v(t=>Promise.all(["static/chunks/f834fbdfee1fb272.js"].map(t=>e.l(t))).then(()=>t(724830)))},644974,e=>{e.v(t=>Promise.all(["static/chunks/f94643ae376a8374.js"].map(t=>e.l(t))).then(()=>t(593869)))},349055,e=>{e.v(t=>Promise.all(["static/chunks/fccba941926c577d.js"].map(t=>e.l(t))).then(()=>t(431097)))},634296,e=>{e.v(t=>Promise.all(["static/chunks/f7c001cb81378309.js"].map(t=>e.l(t))).then(()=>t(420959)))},105603,e=>{e.v(t=>Promise.all(["static/chunks/e1780d7b7c90915d.js"].map(t=>e.l(t))).then(()=>t(821916)))},235827,e=>{e.v(t=>Promise.all(["static/chunks/2867665e4639b64c.js"].map(t=>e.l(t))).then(()=>t(280947)))},128185,e=>{e.v(t=>Promise.all(["static/chunks/6215a1cf1ad67ec3.js"].map(t=>e.l(t))).then(()=>t(716229)))},503940,e=>{e.v(t=>Promise.all(["static/chunks/9c5523382d67ef81.js"].map(t=>e.l(t))).then(()=>t(411166)))},475557,e=>{e.v(t=>Promise.all(["static/chunks/7563cdecdb26f87a.js"].map(t=>e.l(t))).then(()=>t(144762)))},436504,e=>{e.v(t=>Promise.all(["static/chunks/a5982f7b7a2cefeb.js"].map(t=>e.l(t))).then(()=>t(135994)))},730105,e=>{e.v(t=>Promise.all(["static/chunks/42ed5cbbc08def07.js"].map(t=>e.l(t))).then(()=>t(697049)))},260829,e=>{e.v(t=>Promise.all(["static/chunks/c0d0ea65cba10755.js"].map(t=>e.l(t))).then(()=>t(334604)))},260637,e=>{e.v(t=>Promise.all(["static/chunks/7ba854781aa11d3b.js"].map(t=>e.l(t))).then(()=>t(577318)))},814914,e=>{e.v(t=>Promise.all(["static/chunks/b3bbd6b2fa5f34ab.js"].map(t=>e.l(t))).then(()=>t(25454)))},971281,e=>{e.v(t=>Promise.all(["static/chunks/bdab184b582f1dcd.js"].map(t=>e.l(t))).then(()=>t(977684)))},677848,e=>{e.v(t=>Promise.all(["static/chunks/cd979ef00057c229.js"].map(t=>e.l(t))).then(()=>t(718695)))},326626,e=>{e.v(t=>Promise.all(["static/chunks/f3879cb6880d80cb.js"].map(t=>e.l(t))).then(()=>t(974300)))},80543,e=>{e.v(t=>Promise.all(["static/chunks/cd9db3be3b656bef.js"].map(t=>e.l(t))).then(()=>t(204379)))},966562,e=>{e.v(t=>Promise.all(["static/chunks/815e74a2c7178dc0.js"].map(t=>e.l(t))).then(()=>t(555747)))},674561,e=>{e.v(t=>Promise.all(["static/chunks/8fccea2433af52c9.js"].map(t=>e.l(t))).then(()=>t(485447)))},690738,e=>{e.v(t=>Promise.all(["static/chunks/9713a0eaa6ec0f60.js"].map(t=>e.l(t))).then(()=>t(903828)))},135910,e=>{e.v(t=>Promise.all(["static/chunks/40b1187e455656dd.js"].map(t=>e.l(t))).then(()=>t(590530)))},398708,e=>{e.v(t=>Promise.all(["static/chunks/78f608c5af0f395b.js"].map(t=>e.l(t))).then(()=>t(934387)))},754882,e=>{e.v(t=>Promise.all(["static/chunks/7769f3187f80deec.js"].map(t=>e.l(t))).then(()=>t(506750)))},17823,e=>{e.v(t=>Promise.all(["static/chunks/dbccccb621365c3c.js"].map(t=>e.l(t))).then(()=>t(113688)))},709963,e=>{e.v(t=>Promise.all(["static/chunks/3720dd9798593c33.js"].map(t=>e.l(t))).then(()=>t(179487)))},780745,e=>{e.v(t=>Promise.all(["static/chunks/8d5d72ef2db3650d.js"].map(t=>e.l(t))).then(()=>t(945152)))},886878,e=>{e.v(t=>Promise.all(["static/chunks/e2c67140d4b4a2a2.js"].map(t=>e.l(t))).then(()=>t(63956)))},629947,e=>{e.v(t=>Promise.all(["static/chunks/24ae376932af6fb2.js"].map(t=>e.l(t))).then(()=>t(265958)))},725035,e=>{e.v(t=>Promise.all(["static/chunks/bbac9e6cbb5d68ce.js"].map(t=>e.l(t))).then(()=>t(512304)))},267118,e=>{e.v(t=>Promise.all(["static/chunks/8164b71833c4e9d7.js"].map(t=>e.l(t))).then(()=>t(997907)))},992469,e=>{e.v(t=>Promise.all(["static/chunks/3c6ec6f421d61958.js"].map(t=>e.l(t))).then(()=>t(96693)))},299242,e=>{e.v(t=>Promise.all(["static/chunks/ac22d989b6494c97.js"].map(t=>e.l(t))).then(()=>t(852355)))},437078,e=>{e.v(t=>Promise.all(["static/chunks/bf6a21efb5e89e14.js"].map(t=>e.l(t))).then(()=>t(521242)))},433072,e=>{e.v(t=>Promise.all(["static/chunks/37ef0ca9feb4de23.js"].map(t=>e.l(t))).then(()=>t(389762)))},54809,e=>{e.v(t=>Promise.all(["static/chunks/e39fc3c77ce6a413.js"].map(t=>e.l(t))).then(()=>t(634056)))},823801,e=>{e.v(t=>Promise.all(["static/chunks/897b6b9c6c37947c.js"].map(t=>e.l(t))).then(()=>t(730999)))},80341,e=>{e.v(t=>Promise.all(["static/chunks/ac935e03e4b1ef93.js"].map(t=>e.l(t))).then(()=>t(680722)))},379889,e=>{e.v(t=>Promise.all(["static/chunks/2dc7018223b3699c.js"].map(t=>e.l(t))).then(()=>t(594321)))},694678,e=>{e.v(t=>Promise.all(["static/chunks/da263508f3ebfb54.js"].map(t=>e.l(t))).then(()=>t(315715)))},449358,e=>{e.v(t=>Promise.all(["static/chunks/560d1381d891deac.js"].map(t=>e.l(t))).then(()=>t(988679)))},638427,e=>{e.v(t=>Promise.all(["static/chunks/d518194c5933527b.js"].map(t=>e.l(t))).then(()=>t(449589)))},41733,e=>{e.v(t=>Promise.all(["static/chunks/af482c11b888db5c.js"].map(t=>e.l(t))).then(()=>t(199281)))},389205,e=>{e.v(t=>Promise.all(["static/chunks/9fb8aaa813ca695a.js"].map(t=>e.l(t))).then(()=>t(740567)))},812419,e=>{e.v(t=>Promise.all(["static/chunks/a28bf95ae667069f.js"].map(t=>e.l(t))).then(()=>t(546239)))},577939,e=>{e.v(t=>Promise.all(["static/chunks/ecabcb86c8183525.js"].map(t=>e.l(t))).then(()=>t(538162)))},69170,e=>{e.v(t=>Promise.all(["static/chunks/e291b3952ca32b34.js"].map(t=>e.l(t))).then(()=>t(139075)))},685793,e=>{e.v(t=>Promise.all(["static/chunks/b6245f74c269b245.js"].map(t=>e.l(t))).then(()=>t(341227)))}]);
